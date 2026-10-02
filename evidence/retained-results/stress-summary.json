@@ -1,0 +1,35 @@
+{
+  "blocks": 1200,
+  "canonical_bytes_per_endpoint": 305053,
+  "canonical_equal": true,
+  "certificate_bytes": 49432,
+  "checker_accepted": true,
+  "child_processes": 0,
+  "classes": 1201,
+  "css_declarations": 3601,
+  "css_rules": 1200,
+  "decision": "equivalent",
+  "five_run_cpu_seconds": [
+    0.467711,
+    0.514045,
+    0.504609,
+    0.489279,
+    0.498738
+  ],
+  "five_run_wall_seconds": [
+    0.468056,
+    0.514058,
+    0.504879,
+    0.489293,
+    0.499007
+  ],
+  "ids": 1200,
+  "input_bytes_both_endpoints": 322897,
+  "median_cpu_seconds": 0.498738,
+  "median_wall_seconds": 0.499007,
+  "pages": 16,
+  "process_peak_rss_kib": 110832,
+  "resources": 19,
+  "swap_observed_kib": 0,
+  "workers": 1
+}

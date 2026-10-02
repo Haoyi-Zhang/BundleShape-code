@@ -1,0 +1,28 @@
+#id21_0, .cl21_2 {
+  color: #243;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cl21_3 {
+  background-color: #efe;
+  padding-top: 9px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+}
+
+.cl21_5 {
+  color: #586;
+  text-decoration-line: underline;
+}
+
+.cl21_6 {
+  background-image: url("../assets/dot.png");
+  background-color: #efe;
+}
+
+.cl21_7 > .cl21_8 {
+  font-style: italic;
+  margin-top: 4px;
+}

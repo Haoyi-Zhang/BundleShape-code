@@ -1,0 +1,8 @@
+{
+  "format": "iwb-1",
+  "resources": [
+    "site/start.html",
+    "site/doc.html"
+  ],
+  "root": "site/start.html"
+}

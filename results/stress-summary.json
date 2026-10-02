@@ -1,0 +1,37 @@
+{
+  "blocks": 1200,
+  "canonical_bytes_per_endpoint": 305053,
+  "canonical_equal": true,
+  "certificate_bytes": 49432,
+  "checker_accepted": true,
+  "child_processes": 0,
+  "classes": 1201,
+  "content_pages": 16,
+  "css_declarations": 3601,
+  "css_rules": 1200,
+  "decision": "equivalent",
+  "five_run_cpu_seconds": [
+    0.303912,
+    0.353787,
+    0.339463,
+    0.302805,
+    0.3358
+  ],
+  "five_run_wall_seconds": [
+    0.303996,
+    0.353816,
+    0.339475,
+    0.302816,
+    0.335828
+  ],
+  "html_resources": 17,
+  "ids": 1200,
+  "input_bytes_both_endpoints": 322897,
+  "median_cpu_seconds": 0.3358,
+  "median_wall_seconds": 0.335828,
+  "process_peak_rss_kib": 119324,
+  "resources": 19,
+  "root_html_pages": 1,
+  "swap_observed_kib": 0,
+  "workers": 1
+}

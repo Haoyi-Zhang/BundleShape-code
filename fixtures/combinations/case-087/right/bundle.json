@@ -1,0 +1,10 @@
+{
+  "format": "iwb-1",
+  "resources": [
+    "site/home.html",
+    "site/more/detail.html",
+    "site/theme/core.css",
+    "site/media/mark.png"
+  ],
+  "root": "site/home.html"
+}

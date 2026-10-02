@@ -1,0 +1,25 @@
+{
+  "format": "iwb-1",
+  "resources": [
+    "index.html",
+    "styles/main.css",
+    "assets/dot.png",
+    "pages/page-00.html",
+    "pages/page-01.html",
+    "pages/page-02.html",
+    "pages/page-03.html",
+    "pages/page-04.html",
+    "pages/page-05.html",
+    "pages/page-06.html",
+    "pages/page-07.html",
+    "pages/page-08.html",
+    "pages/page-09.html",
+    "pages/page-10.html",
+    "pages/page-11.html",
+    "pages/page-12.html",
+    "pages/page-13.html",
+    "pages/page-14.html",
+    "pages/page-15.html"
+  ],
+  "root": "index.html"
+}

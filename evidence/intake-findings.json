@@ -1,0 +1,64 @@
+{
+  "confirmed_file_facts": {
+    "corresponding_identical_lines": 933,
+    "producer_range": [
+      5,
+      937
+    ],
+    "checker_range": [
+      6,
+      938
+    ],
+    "common_block_including_trailing_blank": 934,
+    "natural_source_study_present": false,
+    "selection_bytes": 20,
+    "tab_exttt_count": 4,
+    "gap_in_longhand_allowlist": true
+  },
+  "small_regressions": {
+    "html-comment": {
+      "decision": "different",
+      "accepted": true
+    },
+    "unicode-0085-2028": {
+      "exception": "AssertionError",
+      "message": "objects differ without textual mismatch"
+    },
+    "unicode-2028-2029": {
+      "exception": "AssertionError",
+      "message": "objects differ without textual mismatch"
+    },
+    "css-comment": {
+      "decision": "different",
+      "accepted": true
+    },
+    "two-2MiB-assets": {
+      "decision": "different",
+      "certificate_bytes": 5592721,
+      "verdict": {
+        "accepted": false,
+        "reason": "certificate-too-large"
+      }
+    },
+    "manifest_paths": {
+      "./index.html": {
+        "accepted_as": "index.html"
+      },
+      "a/./b.html": {
+        "accepted_as": "a/b.html"
+      },
+      "a//b.html": {
+        "accepted_as": "a/b.html"
+      }
+    },
+    "permission-error": {
+      "decision": "out-of-language",
+      "verdict": {
+        "accepted": true,
+        "decision": "out-of-language",
+        "reason": null
+      }
+    }
+  },
+  "cpu_seconds": 0.11637639200000005
+}

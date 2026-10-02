@@ -1,0 +1,28 @@
+.cl18_2, #id18_0 {
+  color: #342;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cl18_3 {
+  background-color: #ffe;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+}
+
+.cl18_5 {
+  color: #875;
+  text-decoration-line: underline;
+}
+
+.cl18_6 {
+  background-image: url("../assets/dot.png");
+  background-color: #ffe;
+}
+
+.cl18_7 > .cl18_8 {
+  font-style: italic;
+  margin-top: 4px;
+}

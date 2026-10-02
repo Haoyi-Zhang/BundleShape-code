@@ -1,0 +1,22 @@
+{
+  "child_cpu_seconds": 22.513384,
+  "comparator": {
+    "compared": 10,
+    "matched": true,
+    "mismatches": []
+  },
+  "driver_exit": 0,
+  "isolation": "artifact copied without pycache to a separate directory; invoked by absolute script path from unrelated working directory",
+  "repair_acceptance_passed": true,
+  "repair_receipt_matches": true,
+  "static_receipt_matches": true,
+  "unit_summary": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "successful": true,
+    "tests_run": 84,
+    "wall_seconds": 1.644508
+  },
+  "wall_seconds": 22.962218
+}

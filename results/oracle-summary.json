@@ -1,0 +1,36 @@
+{
+  "bundles": 96,
+  "candidate_bijections_tried": 18176,
+  "different_orbit_pairs": 4352,
+  "disagreements": 0,
+  "examples": [],
+  "ordered_pairs": 5120,
+  "same_orbit_pairs": 768,
+  "suites": [
+    {
+      "bundles": 64,
+      "candidate_bijections_tried": 14848,
+      "different_orbit_pairs": 3584,
+      "disagreements": 0,
+      "ordered_pairs": 4096,
+      "producer_checker_parse_shape_agreement": true,
+      "same_orbit_pairs": 512,
+      "scope": "two HTML resources, two IDs, two classes",
+      "suite": "html",
+      "wall_seconds": 0.162179
+    },
+    {
+      "bundles": 32,
+      "candidate_bijections_tried": 3328,
+      "different_orbit_pairs": 768,
+      "disagreements": 0,
+      "ordered_pairs": 1024,
+      "producer_checker_parse_shape_agreement": true,
+      "same_orbit_pairs": 256,
+      "scope": "two HTML, one CSS, one image, two IDs, two classes",
+      "suite": "html-css-asset",
+      "wall_seconds": 0.062249
+    }
+  ],
+  "wall_seconds": 0.411869
+}

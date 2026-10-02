@@ -1,0 +1,8 @@
+{
+  "format": "iwb-1",
+  "resources": [
+    "pages/info.html",
+    "home.html"
+  ],
+  "root": "home.html"
+}

@@ -1,0 +1,35 @@
+{
+  "all_expected_and_checked": true,
+  "certificate_bytes": {
+    "max": 612,
+    "median": 531.5,
+    "min": 146
+  },
+  "checker_accepted": 512,
+  "expected_counts": {
+    "different": 160,
+    "equivalent": 256,
+    "out-of-language": 96
+  },
+  "failures": [],
+  "mutation_counts": {
+    "broken_ref": 36,
+    "changed_asset": 30,
+    "changed_css": 30,
+    "changed_selector": 28,
+    "changed_text": 35,
+    "duplicate_id": 32,
+    "forbidden_form": 28,
+    "none": 256,
+    "swap_siblings": 37
+  },
+  "pairs": 512,
+  "producer_checker_parser_agreements": 512,
+  "producer_counts": {
+    "different": 160,
+    "equivalent": 256,
+    "out-of-language": 96
+  },
+  "seed": 20260917,
+  "wall_seconds": 9.60791
+}

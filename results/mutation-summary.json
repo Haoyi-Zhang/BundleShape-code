@@ -1,0 +1,25 @@
+{
+  "base_certificates": 72,
+  "by_decision": {
+    "different": {
+      "accepted": 0,
+      "attempts": 120,
+      "base_certificates": 24
+    },
+    "equivalent": {
+      "accepted": 0,
+      "attempts": 120,
+      "base_certificates": 24
+    },
+    "out-of-language": {
+      "accepted": 0,
+      "attempts": 120,
+      "base_certificates": 24
+    }
+  },
+  "incorrectly_accepted": 0,
+  "mutations": 360,
+  "mutations_per_base_certificate": 5,
+  "rejected": 360,
+  "unexpected_accept_examples": []
+}

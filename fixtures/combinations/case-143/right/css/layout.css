@@ -1,0 +1,28 @@
+#title, .cl5_2 {
+  line-height: 1.2;
+  font-weight: 700;
+  color: #243;
+}
+
+.cl5_3 {
+  padding-left: 10px;
+  padding-bottom: 8px;
+  padding-right: 10px;
+  padding-top: 9px;
+  background-color: #efe;
+}
+
+.cl5_5 {
+  text-decoration-line: underline;
+  color: #586;
+}
+
+.cl5_6 {
+  background-color: #efe;
+  background-image: url("../media/pixel.png");
+}
+
+.cl5_7 > .cl5_8 {
+  font-style: italic;
+  margin-top: 4px;
+}

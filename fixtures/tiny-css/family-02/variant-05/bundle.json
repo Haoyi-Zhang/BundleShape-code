@@ -1,0 +1,10 @@
+{
+  "format": "iwb-1",
+  "resources": [
+    "media/pixel.png",
+    "css/theme.css",
+    "docs/info.html",
+    "home.html"
+  ],
+  "root": "home.html"
+}

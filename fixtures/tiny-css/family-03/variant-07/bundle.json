@@ -1,0 +1,10 @@
+{
+  "format": "iwb-1",
+  "resources": [
+    "asset.png",
+    "presentation.css",
+    "page.html",
+    "entry.html"
+  ],
+  "root": "entry.html"
+}

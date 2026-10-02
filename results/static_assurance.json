@@ -1,0 +1,156 @@
+{
+  "checker_imports_producer": false,
+  "compiled_files": 9,
+  "eval_or_exec_calls": 0,
+  "files": [
+    {
+      "forbidden_dynamic_calls": [],
+      "imports": [],
+      "lines": 1,
+      "network_imports": [],
+      "path": "src/__init__.py",
+      "shell_true_calls": 0
+    },
+    {
+      "forbidden_dynamic_calls": [],
+      "imports": [
+        "",
+        "__future__",
+        "checker_core",
+        "hashlib",
+        "json",
+        "pathlib",
+        "producer_core",
+        "re",
+        "typing"
+      ],
+      "lines": 169,
+      "network_imports": [],
+      "path": "src/baselines.py",
+      "shell_true_calls": 0
+    },
+    {
+      "forbidden_dynamic_calls": [],
+      "imports": [
+        "",
+        "__future__",
+        "base64",
+        "dataclasses",
+        "hashlib",
+        "html.parser",
+        "json",
+        "os",
+        "pathlib",
+        "posixpath",
+        "re",
+        "stat",
+        "typing",
+        "unicodedata",
+        "urllib.parse"
+      ],
+      "lines": 1236,
+      "network_imports": [],
+      "path": "src/checker_core.py",
+      "shell_true_calls": 0
+    },
+    {
+      "forbidden_dynamic_calls": [],
+      "imports": [
+        "__future__",
+        "itertools",
+        "pathlib",
+        "posixpath",
+        "producer_core",
+        "typing",
+        "urllib.parse"
+      ],
+      "lines": 239,
+      "network_imports": [],
+      "path": "src/exact_oracle.py",
+      "shell_true_calls": 0
+    },
+    {
+      "forbidden_dynamic_calls": [],
+      "imports": [
+        "__future__",
+        "base64",
+        "dataclasses",
+        "json",
+        "pathlib",
+        "posixpath",
+        "shutil",
+        "typing"
+      ],
+      "lines": 281,
+      "network_imports": [],
+      "path": "src/fixture_factory.py",
+      "shell_true_calls": 0
+    },
+    {
+      "forbidden_dynamic_calls": [],
+      "imports": [],
+      "lines": 70,
+      "network_imports": [],
+      "path": "src/limits.py",
+      "shell_true_calls": 0
+    },
+    {
+      "forbidden_dynamic_calls": [],
+      "imports": [
+        "",
+        "__future__",
+        "base64",
+        "dataclasses",
+        "hashlib",
+        "html.parser",
+        "json",
+        "os",
+        "pathlib",
+        "posixpath",
+        "re",
+        "stat",
+        "typing",
+        "unicodedata",
+        "urllib.parse"
+      ],
+      "lines": 1054,
+      "network_imports": [],
+      "path": "src/producer_core.py",
+      "shell_true_calls": 0
+    },
+    {
+      "forbidden_dynamic_calls": [],
+      "imports": [
+        "__future__",
+        "fixture_factory",
+        "json",
+        "pathlib",
+        "posixpath",
+        "shutil"
+      ],
+      "lines": 110,
+      "network_imports": [],
+      "path": "src/stress_factory.py",
+      "shell_true_calls": 0
+    },
+    {
+      "forbidden_dynamic_calls": [],
+      "imports": [
+        "__future__",
+        "json",
+        "pathlib",
+        "posixpath",
+        "shutil"
+      ],
+      "lines": 190,
+      "network_imports": [],
+      "path": "src/tiny_fixtures.py",
+      "shell_true_calls": 0
+    }
+  ],
+  "network_imports": 0,
+  "parsing_core_independence": "same-source duplicated core; import isolation is not independent implementation",
+  "python_files": 9,
+  "schema": "iwb-static-assurance",
+  "shell_true_calls": 0
+}

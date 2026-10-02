@@ -1,0 +1,28 @@
+#id1_0, .heading {
+  color: #243;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.card {
+  background-color: #efe;
+  padding-top: 9px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+}
+
+.link {
+  color: #586;
+  text-decoration-line: underline;
+}
+
+.image {
+  background-image: url("mark.png");
+  background-color: #efe;
+}
+
+.detail > .note {
+  font-style: italic;
+  margin-top: 4px;
+}

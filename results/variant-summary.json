@@ -1,0 +1,60 @@
+{
+  "baselines": {
+    "byte_inventory": {
+      "accuracy": 0.29411764705882354,
+      "false_negative": 288,
+      "false_positive": 0,
+      "negative_recall": 1.0,
+      "positive_recall": 0.0,
+      "true_negative": 120,
+      "true_positive": 0
+    },
+    "lexical": {
+      "accuracy": 0.29411764705882354,
+      "false_negative": 288,
+      "false_positive": 0,
+      "negative_recall": 1.0,
+      "positive_recall": 0.0,
+      "true_negative": 120,
+      "true_positive": 0
+    },
+    "local_alpha": {
+      "accuracy": 1.0,
+      "false_negative": 0,
+      "false_positive": 0,
+      "negative_recall": 1.0,
+      "positive_recall": 1.0,
+      "true_negative": 120,
+      "true_positive": 288
+    },
+    "syntax_no_alpha": {
+      "accuracy": 0.6470588235294118,
+      "false_negative": 144,
+      "false_positive": 0,
+      "negative_recall": 1.0,
+      "positive_recall": 0.5,
+      "true_negative": 120,
+      "true_positive": 144
+    }
+  },
+  "certificate_bytes": {
+    "max": 612,
+    "median": 584.5,
+    "min": 147
+  },
+  "different_pairs": 120,
+  "eligible_pairs": 408,
+  "equivalent_pairs": 288,
+  "frozen_domain_dimensions": {
+    "admitted_unique_bundles": 432,
+    "css_declarations": 6048,
+    "css_rules": 2160,
+    "html_events": 21168,
+    "resource_edges": 2160,
+    "resources": 1728
+  },
+  "out_of_language_pairs": 72,
+  "pairs": 480,
+  "proposed_accuracy": 1.0,
+  "proposed_correct": 480
+}

@@ -1,0 +1,15 @@
+{
+  "captured_at_utc_date": "2026-09-15",
+  "cpu_affinity": "0-4",
+  "cpu_quota": "400000/100000 (4 cores)",
+  "execution_choice": {
+    "aggregate_workers": 1,
+    "campaign_cpu_hour_ceiling": 7.5,
+    "per_process_address_space_mib": 512,
+    "reserved_fraction_for_repair_and_clean_reproduction": 0.25
+  },
+  "memory_current_bytes": 346718208,
+  "memory_limit_bytes": 4294967296,
+  "swap_bytes": 0,
+  "writable_free_bytes": 31986331648
+}

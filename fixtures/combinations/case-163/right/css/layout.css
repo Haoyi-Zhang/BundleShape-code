@@ -1,0 +1,30 @@
+/* inert source comment */
+
+#id1_0, .cl1_2 {
+  color: #243;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cl1_3 {
+  background-color: #efe;
+  padding-top: 9px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+}
+
+.cl1_5 {
+  color: #586;
+  text-decoration-line: underline;
+}
+
+.cl1_6 {
+  background-image: url("../media/pixel.png");
+  background-color: #efe;
+}
+
+.cl1_7 > .cl1_8 {
+  font-style: italic;
+  margin-top: 4px;
+}

@@ -1,0 +1,6 @@
+method,tp,fn,tn,fp,accuracy,coupling_negative
+certificate normal form,288,0,120,0,1.0,True
+byte_inventory,0,288,120,0,0.29411764705882354,True
+lexical,0,288,120,0,0.29411764705882354,True
+syntax_no_alpha,144,144,120,0,0.6470588235294118,True
+local_alpha,288,0,120,0,1.0,False

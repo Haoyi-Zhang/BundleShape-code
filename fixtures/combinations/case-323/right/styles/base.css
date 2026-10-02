@@ -1,0 +1,30 @@
+/* inert source comment */
+
+#title, .cl23_2 {
+  color: #324;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cl23_3 {
+  background-color: #fef;
+  padding-top: 11px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+}
+
+.cl23_5 {
+  color: #756;
+  text-decoration-line: underline;
+}
+
+.cl23_6 {
+  background-image: url("../assets/dot.png");
+  background-color: #fef;
+}
+
+.cl23_7 > .cl23_8 {
+  font-style: italic;
+  margin-top: 4px;
+}

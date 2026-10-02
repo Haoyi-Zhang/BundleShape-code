@@ -1,0 +1,31 @@
+{
+  "access_date": "2026-09-15",
+  "acquisition": "read-only GitHub API metadata and GitHub code-search index; no page was rendered or executed",
+  "code_search_index_counts": {
+    "html_files_matching_doctype_literal": 66,
+    "html_files_matching_form_start": 60,
+    "html_files_matching_inline_onclick": 21,
+    "html_files_matching_script_start": 54
+  },
+  "code_search_warning": "Counts are per-query index results, not disjoint sets, not a complete corpus parser, and not an eligibility denominator.",
+  "license": "MIT",
+  "model_directories_visible_by_provider": {
+    "Claude": 5,
+    "GPT": 5,
+    "Gemini": 5,
+    "Grok": 5,
+    "Llama": 5,
+    "Mistral": 5,
+    "Nova": 4,
+    "Qwen": 5
+  },
+  "paper_reported_codebases": 200,
+  "paper_reported_coding_agents": 40,
+  "repository": "TailiaReganMalloy/assessingSpearPhishing",
+  "repository_default_branch": "main",
+  "repository_revision": "d6fb92116fb541d789c51ca4d8bd642e0ab6ca01",
+  "repository_revision_date_utc": "2026-04-28T09:16:42Z",
+  "real_source_admitted_bundles": null,
+  "real_source_admission_status": "not measured: the public repository is not distributed in the artifact's bundle format and full source bytes were neither transformed nor redistributed",
+  "safety_boundary": "Only metadata and index counts were retained. No risky source blob, credential workflow, destination, screenshot, rendered page, or derived deployable site is included."
+}

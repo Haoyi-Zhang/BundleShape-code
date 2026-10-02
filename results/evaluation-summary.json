@@ -1,0 +1,212 @@
+{
+  "campaign": {
+    "child_processes": 0,
+    "cpu_seconds": 15.430021,
+    "wall_seconds": 15.434057,
+    "workers": 1
+  },
+  "certificate_mutations": {
+    "base_certificates": 72,
+    "by_decision": {
+      "different": {
+        "accepted": 0,
+        "attempts": 120,
+        "base_certificates": 24
+      },
+      "equivalent": {
+        "accepted": 0,
+        "attempts": 120,
+        "base_certificates": 24
+      },
+      "out-of-language": {
+        "accepted": 0,
+        "attempts": 120,
+        "base_certificates": 24
+      }
+    },
+    "incorrectly_accepted": 0,
+    "mutations": 360,
+    "mutations_per_base_certificate": 5,
+    "rejected": 360,
+    "unexpected_accept_examples": []
+  },
+  "combination_campaign": {
+    "all_expected_and_checked": true,
+    "certificate_bytes": {
+      "max": 612,
+      "median": 434.0,
+      "min": 145
+    },
+    "checker_accepted": 512,
+    "expected_counts": {
+      "different": 160,
+      "equivalent": 256,
+      "out-of-language": 96
+    },
+    "failures": [],
+    "mutation_counts": {
+      "broken_ref": 36,
+      "changed_asset": 30,
+      "changed_css": 30,
+      "changed_selector": 28,
+      "changed_text": 35,
+      "duplicate_id": 32,
+      "forbidden_form": 28,
+      "none": 256,
+      "swap_siblings": 37
+    },
+    "pairs": 512,
+    "producer_checker_canonical_or_rejection_agreements": 512,
+    "producer_counts": {
+      "different": 160,
+      "equivalent": 256,
+      "out-of-language": 96
+    },
+    "seed": 20260917,
+    "wall_seconds": 6.137073
+  },
+  "coupling_control": {
+    "byte_inventory_equal": false,
+    "checker_accepted": true,
+    "description": "resource-local alpha normalization loses the cross-resource class coupling",
+    "expected": "different",
+    "lexical_equal": false,
+    "local_alpha_equal": true,
+    "producer_decision": "different",
+    "syntax_no_alpha_equal": false
+  },
+  "format": "iwb-evaluation-1",
+  "stress": {
+    "blocks": 1200,
+    "canonical_bytes_per_endpoint": 305053,
+    "canonical_equal": true,
+    "certificate_bytes": 49432,
+    "checker_accepted": true,
+    "child_processes": 0,
+    "classes": 1201,
+    "content_pages": 16,
+    "css_declarations": 3601,
+    "css_rules": 1200,
+    "decision": "equivalent",
+    "five_run_cpu_seconds": [
+      0.303912,
+      0.353787,
+      0.339463,
+      0.302805,
+      0.3358
+    ],
+    "five_run_wall_seconds": [
+      0.303996,
+      0.353816,
+      0.339475,
+      0.302816,
+      0.335828
+    ],
+    "html_resources": 17,
+    "ids": 1200,
+    "input_bytes_both_endpoints": 322897,
+    "median_cpu_seconds": 0.3358,
+    "median_wall_seconds": 0.335828,
+    "process_peak_rss_kib": 119324,
+    "resources": 19,
+    "root_html_pages": 1,
+    "swap_observed_kib": 0,
+    "workers": 1
+  },
+  "tiny_oracle": {
+    "bundles": 96,
+    "candidate_bijections_tried": 18176,
+    "different_orbit_pairs": 4352,
+    "disagreements": 0,
+    "examples": [],
+    "ordered_pairs": 5120,
+    "same_orbit_pairs": 768,
+    "suites": [
+      {
+        "bundles": 64,
+        "candidate_bijections_tried": 14848,
+        "different_orbit_pairs": 3584,
+        "disagreements": 0,
+        "ordered_pairs": 4096,
+        "producer_checker_parse_shape_agreement": true,
+        "same_orbit_pairs": 512,
+        "scope": "two HTML resources, two IDs, two classes",
+        "suite": "html",
+        "wall_seconds": 0.162179
+      },
+      {
+        "bundles": 32,
+        "candidate_bijections_tried": 3328,
+        "different_orbit_pairs": 768,
+        "disagreements": 0,
+        "ordered_pairs": 1024,
+        "producer_checker_parse_shape_agreement": true,
+        "same_orbit_pairs": 256,
+        "scope": "two HTML, one CSS, one image, two IDs, two classes",
+        "suite": "html-css-asset",
+        "wall_seconds": 0.062249
+      }
+    ],
+    "wall_seconds": 0.411869
+  },
+  "variant_campaign": {
+    "baselines": {
+      "byte_inventory": {
+        "accuracy": 0.29411764705882354,
+        "false_negative": 288,
+        "false_positive": 0,
+        "negative_recall": 1.0,
+        "positive_recall": 0.0,
+        "true_negative": 120,
+        "true_positive": 0
+      },
+      "lexical": {
+        "accuracy": 0.29411764705882354,
+        "false_negative": 288,
+        "false_positive": 0,
+        "negative_recall": 1.0,
+        "positive_recall": 0.0,
+        "true_negative": 120,
+        "true_positive": 0
+      },
+      "local_alpha": {
+        "accuracy": 1.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "negative_recall": 1.0,
+        "positive_recall": 1.0,
+        "true_negative": 120,
+        "true_positive": 288
+      },
+      "syntax_no_alpha": {
+        "accuracy": 0.6470588235294118,
+        "false_negative": 144,
+        "false_positive": 0,
+        "negative_recall": 1.0,
+        "positive_recall": 0.5,
+        "true_negative": 120,
+        "true_positive": 144
+      }
+    },
+    "certificate_bytes": {
+      "max": 612,
+      "median": 584.5,
+      "min": 147
+    },
+    "different_pairs": 120,
+    "eligible_pairs": 408,
+    "equivalent_pairs": 288,
+    "frozen_domain_dimensions": {
+      "admitted_unique_bundles": 432,
+      "css_declarations": 6048,
+      "css_rules": 2160,
+      "html_events": 21168,
+      "resource_edges": 2160,
+      "resources": 1728
+    },
+    "out_of_language_pairs": 72,
+    "pairs": 480,
+    "proposed_accuracy": 1.0,
+    "proposed_correct": 480
+  }
+}

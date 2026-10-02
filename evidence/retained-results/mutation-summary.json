@@ -1,0 +1,20 @@
+{
+  "by_decision": {
+    "different": {
+      "accepted": 0,
+      "attempts": 120
+    },
+    "equivalent": {
+      "accepted": 0,
+      "attempts": 120
+    },
+    "out-of-language": {
+      "accepted": 0,
+      "attempts": 120
+    }
+  },
+  "incorrectly_accepted": 0,
+  "mutations": 360,
+  "rejected": 360,
+  "unexpected_accept_examples": []
+}

@@ -1,0 +1,30 @@
+/* inert source comment */
+
+#id5_0, .heading {
+  line-height: 1.2;
+  font-weight: 700;
+  color: #243;
+}
+
+.card {
+  padding-left: 10px;
+  padding-bottom: 8px;
+  padding-right: 10px;
+  padding-top: 9px;
+  background-color: #efe;
+}
+
+.link {
+  text-decoration-line: underline;
+  color: #586;
+}
+
+.image {
+  background-color: #efe;
+  background-image: url("../media/pixel.png");
+}
+
+.detail > .note {
+  font-style: italic;
+  margin-top: 4px;
+}

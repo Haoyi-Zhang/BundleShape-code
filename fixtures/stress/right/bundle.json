@@ -1,0 +1,25 @@
+{
+  "format": "iwb-1",
+  "resources": [
+    "site/pages/p15.html",
+    "site/pages/p14.html",
+    "site/pages/p13.html",
+    "site/pages/p12.html",
+    "site/pages/p11.html",
+    "site/pages/p10.html",
+    "site/pages/p09.html",
+    "site/pages/p08.html",
+    "site/pages/p07.html",
+    "site/pages/p06.html",
+    "site/pages/p05.html",
+    "site/pages/p04.html",
+    "site/pages/p03.html",
+    "site/pages/p02.html",
+    "site/pages/p01.html",
+    "site/pages/p00.html",
+    "site/media/dot.png",
+    "site/css/theme.css",
+    "site/home.html"
+  ],
+  "root": "site/home.html"
+}

@@ -1,0 +1,1 @@
+These are the exact consumed pre-repair scientific result files. They are retained to expose deterministic changes and preserve original timing/RSS observations, not as a second release or an endorsement of their stale field descriptions. Current reproducible results are in ../../results.

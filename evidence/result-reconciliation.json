@@ -1,0 +1,1487 @@
+{
+  "combination_pairwise_inspection": {
+    "cases": 512,
+    "changed_certificates_by_decision": {
+      "different": 160,
+      "out-of-language": 18
+    },
+    "changed_structural_witnesses": [
+      {
+        "case": "case-014",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "id7_1",
+          "location": "home.html:12:1"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "id7_1",
+          "location": "docs/info.html:9:1"
+        }
+      },
+      {
+        "case": "case-092",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "id17_1",
+          "location": "home.html:1:279"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "id17_1",
+          "location": "docs/info.html:1:162"
+        }
+      },
+      {
+        "case": "case-115",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "home.html:12:1"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "docs/info.html:9:1"
+        }
+      },
+      {
+        "case": "case-118",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "entry.html:1:284"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "detail.html:1:160"
+        }
+      },
+      {
+        "case": "case-152",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "home.html:1:242"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "docs/info.html:1:162"
+        }
+      },
+      {
+        "case": "case-162",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "entry.html:1:278"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "detail.html:1:160"
+        }
+      },
+      {
+        "case": "case-189",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "id10_1",
+          "location": "home.html:13:1"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "id10_1",
+          "location": "docs/info.html:9:1"
+        }
+      },
+      {
+        "case": "case-202",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "id10_1",
+          "location": "home.html:13:1"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "id10_1",
+          "location": "docs/info.html:9:1"
+        }
+      },
+      {
+        "case": "case-221",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "home.html:12:1"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "docs/info.html:9:1"
+        }
+      },
+      {
+        "case": "case-240",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "entry.html:1:278"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "detail.html:1:163"
+        }
+      },
+      {
+        "case": "case-255",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "home.html:1:284"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "docs/info.html:1:162"
+        }
+      },
+      {
+        "case": "case-285",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "id10_1",
+          "location": "entry.html:12:1"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "id10_1",
+          "location": "detail.html:9:1"
+        }
+      },
+      {
+        "case": "case-291",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "entry.html:1:280"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "detail.html:1:161"
+        }
+      },
+      {
+        "case": "case-358",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "id2_1",
+          "location": "home.html:1:281"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "id2_1",
+          "location": "docs/info.html:1:162"
+        }
+      },
+      {
+        "case": "case-393",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "id7_1",
+          "location": "home.html:1:242"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "id7_1",
+          "location": "docs/info.html:1:162"
+        }
+      },
+      {
+        "case": "case-447",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "entry.html:12:1"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "detail.html:9:1"
+        }
+      },
+      {
+        "case": "case-449",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "home.html:1:252"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "card",
+          "location": "docs/info.html:1:163"
+        }
+      },
+      {
+        "case": "case-494",
+        "current_witness": {
+          "code": "duplicate-id",
+          "detail": "id16_1",
+          "location": "home.html:1:247"
+        },
+        "old_witness": {
+          "code": "duplicate-id",
+          "detail": "id16_1",
+          "location": "docs/info.html:1:166"
+        }
+      }
+    ],
+    "decisions_unchanged": 512
+  },
+  "compared_files": 10,
+  "explanation": {
+    "same_source_label": "canonical_or_rejection_agreements accurately names the actual comparison",
+    "sampling_units": "adds 72 base instances / 24 per decision / five mutations per base without changing 360 attempts",
+    "stress_dimensions": "replaces ambiguous pages:16 by content_pages:16, root_html_pages:1, html_resources:17; resources:19 unchanged",
+    "structural_diagnostics": "sorted resource validation and maximal text-run handling can change the selected error/location; exact changes are listed per case",
+    "tests": "47 inherited methods plus 37 targeted repair methods = 84",
+    "timing": "incoming wall/CPU/RSS remain unchanged in retained-results; current observations are freshly measured",
+    "witness_encoding": "first UTF-8 byte and lengths replace complete split lines; per-case size changes are retained, not normalized away"
+  },
+  "files": [
+    {
+      "byte_identical": true,
+      "deterministic_changes": [],
+      "file": "baseline-summary.csv"
+    },
+    {
+      "byte_identical": false,
+      "deterministic_changes": [
+        {
+          "current": 434.0,
+          "field": "/certificate_bytes/median",
+          "incoming": 531.5
+        },
+        {
+          "current": 145,
+          "field": "/certificate_bytes/min",
+          "incoming": 146
+        },
+        {
+          "current": 512,
+          "field": "/producer_checker_canonical_or_rejection_agreements",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": {
+            "absent": true
+          },
+          "field": "/producer_checker_parser_agreements",
+          "incoming": 512
+        }
+      ],
+      "file": "combination-summary.json",
+      "telemetry_fields_changed": [
+        "/wall_seconds"
+      ]
+    },
+    {
+      "byte_identical": true,
+      "deterministic_changes": [],
+      "file": "coupling-control.json",
+      "telemetry_fields_changed": []
+    },
+    {
+      "byte_identical": false,
+      "deterministic_changes": [
+        {
+          "current": 72,
+          "field": "/certificate_mutations/base_certificates",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": 24,
+          "field": "/certificate_mutations/by_decision/different/base_certificates",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": 24,
+          "field": "/certificate_mutations/by_decision/equivalent/base_certificates",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": 24,
+          "field": "/certificate_mutations/by_decision/out-of-language/base_certificates",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": 5,
+          "field": "/certificate_mutations/mutations_per_base_certificate",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": 434.0,
+          "field": "/combination_campaign/certificate_bytes/median",
+          "incoming": 531.5
+        },
+        {
+          "current": 145,
+          "field": "/combination_campaign/certificate_bytes/min",
+          "incoming": 146
+        },
+        {
+          "current": 512,
+          "field": "/combination_campaign/producer_checker_canonical_or_rejection_agreements",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": {
+            "absent": true
+          },
+          "field": "/combination_campaign/producer_checker_parser_agreements",
+          "incoming": 512
+        },
+        {
+          "current": 16,
+          "field": "/stress/content_pages",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": 17,
+          "field": "/stress/html_resources",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": {
+            "absent": true
+          },
+          "field": "/stress/pages",
+          "incoming": 16
+        },
+        {
+          "current": 1,
+          "field": "/stress/root_html_pages",
+          "incoming": {
+            "absent": true
+          }
+        }
+      ],
+      "file": "evaluation-summary.json",
+      "telemetry_fields_changed": [
+        "/campaign/cpu_seconds",
+        "/campaign/wall_seconds",
+        "/combination_campaign/wall_seconds",
+        "/stress/five_run_cpu_seconds",
+        "/stress/five_run_wall_seconds",
+        "/stress/median_cpu_seconds",
+        "/stress/median_wall_seconds",
+        "/stress/process_peak_rss_kib",
+        "/tiny_oracle/wall_seconds"
+      ]
+    },
+    {
+      "byte_identical": false,
+      "deterministic_changes": [
+        {
+          "current": 72,
+          "field": "/base_certificates",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": 24,
+          "field": "/by_decision/different/base_certificates",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": 24,
+          "field": "/by_decision/equivalent/base_certificates",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": 24,
+          "field": "/by_decision/out-of-language/base_certificates",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": 5,
+          "field": "/mutations_per_base_certificate",
+          "incoming": {
+            "absent": true
+          }
+        }
+      ],
+      "file": "mutation-summary.json",
+      "telemetry_fields_changed": []
+    },
+    {
+      "byte_identical": false,
+      "deterministic_changes": [],
+      "file": "oracle-summary.json",
+      "telemetry_fields_changed": [
+        "/wall_seconds"
+      ]
+    },
+    {
+      "byte_identical": false,
+      "deterministic_changes": [
+        {
+          "current": 16,
+          "field": "/content_pages",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": 17,
+          "field": "/html_resources",
+          "incoming": {
+            "absent": true
+          }
+        },
+        {
+          "current": {
+            "absent": true
+          },
+          "field": "/pages",
+          "incoming": 16
+        },
+        {
+          "current": 1,
+          "field": "/root_html_pages",
+          "incoming": {
+            "absent": true
+          }
+        }
+      ],
+      "file": "stress-summary.json",
+      "telemetry_fields_changed": [
+        "/five_run_cpu_seconds",
+        "/five_run_wall_seconds",
+        "/median_cpu_seconds",
+        "/median_wall_seconds",
+        "/process_peak_rss_kib"
+      ]
+    },
+    {
+      "byte_identical": false,
+      "deterministic_changes": [
+        {
+          "current": 84,
+          "field": "/tests_run",
+          "incoming": 47
+        }
+      ],
+      "file": "unit-summary.json",
+      "telemetry_fields_changed": [
+        "/wall_seconds"
+      ]
+    },
+    {
+      "byte_identical": false,
+      "deterministic_changes": [
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 3
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 4
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "335"
+            }
+          ],
+          "row_0_based": 6
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 15
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 23
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 24
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "315"
+            }
+          ],
+          "row_0_based": 26
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 35
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 43
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 44
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "327"
+            }
+          ],
+          "row_0_based": 46
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 55
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 63
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 64
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "337"
+            }
+          ],
+          "row_0_based": 66
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 75
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 83
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 84
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "327"
+            }
+          ],
+          "row_0_based": 86
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 95
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 103
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 104
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "323"
+            }
+          ],
+          "row_0_based": 106
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 115
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 123
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 124
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "335"
+            }
+          ],
+          "row_0_based": 126
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 135
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 143
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 144
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "315"
+            }
+          ],
+          "row_0_based": 146
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 155
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 163
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 164
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "327"
+            }
+          ],
+          "row_0_based": 166
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 175
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 183
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 184
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "337"
+            }
+          ],
+          "row_0_based": 186
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 195
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 203
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 204
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "327"
+            }
+          ],
+          "row_0_based": 206
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 215
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 223
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 224
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "323"
+            }
+          ],
+          "row_0_based": 226
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 235
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 243
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 244
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "335"
+            }
+          ],
+          "row_0_based": 246
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 255
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 263
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 264
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "315"
+            }
+          ],
+          "row_0_based": 266
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 275
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 283
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 284
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "327"
+            }
+          ],
+          "row_0_based": 286
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 295
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 303
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 304
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "337"
+            }
+          ],
+          "row_0_based": 306
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 315
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 323
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 324
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "327"
+            }
+          ],
+          "row_0_based": 326
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 335
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 343
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 344
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "323"
+            }
+          ],
+          "row_0_based": 346
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 355
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 363
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 364
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "335"
+            }
+          ],
+          "row_0_based": 366
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 375
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 383
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 384
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "315"
+            }
+          ],
+          "row_0_based": 386
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 395
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 403
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 404
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "327"
+            }
+          ],
+          "row_0_based": 406
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 415
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 423
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 424
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "337"
+            }
+          ],
+          "row_0_based": 426
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 435
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 443
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 444
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "327"
+            }
+          ],
+          "row_0_based": 446
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 455
+        },
+        {
+          "changes": [
+            {
+              "current": "295",
+              "field": "/certificate_bytes",
+              "incoming": "491"
+            }
+          ],
+          "row_0_based": 463
+        },
+        {
+          "changes": [
+            {
+              "current": "296",
+              "field": "/certificate_bytes",
+              "incoming": "297"
+            }
+          ],
+          "row_0_based": 464
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "323"
+            }
+          ],
+          "row_0_based": 466
+        },
+        {
+          "changes": [
+            {
+              "current": "294",
+              "field": "/certificate_bytes",
+              "incoming": "277"
+            }
+          ],
+          "row_0_based": 475
+        }
+      ],
+      "file": "variant-results.csv"
+    },
+    {
+      "byte_identical": true,
+      "deterministic_changes": [],
+      "file": "variant-summary.json",
+      "telemetry_fields_changed": []
+    }
+  ],
+  "files_with_scientific_or_schema_changes": 6,
+  "files_without_scientific_or_schema_changes": 4,
+  "incoming_raw_results_preserved_exactly": true,
+  "scope": "No natural-source data/results have been reconstructed; this is reconciliation of owned-fixture observations."
+}
