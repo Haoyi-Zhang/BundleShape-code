@@ -155,5 +155,3 @@ contract, `proofs/` written arguments, `results/` current outputs, `evidence/`
 original observations and repair checks. `claim_evidence_ledger.csv` maps claims
 to actual code/results. `baseline_trace/` retains the earlier narrow trace
 counterexample as background, not as full web evidence.
-
-The inherited manuscript attributes earlier substantive formulation, proofs, code, experiments and prose to GPT-5.6 Sol Pro in ChatGPT; that attribution is retained as an inherited disclosure, not independently verified model metadata. The present targeted repairs, regressions, analysis and manuscript edits used GPT-6 Astra Pro. No human-only creation, author approval or independent review is asserted. The named authors must inspect the work and satisfy external-use policies.
