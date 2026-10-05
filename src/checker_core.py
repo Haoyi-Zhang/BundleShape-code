@@ -172,11 +172,11 @@ def _resolve_ref(base_path: str, raw: str, location: str) -> tuple[str | None, s
         parts = urlsplit(raw)
     except ValueError as exc:
         raise AdmissionError("bad-reference", location, "malformed URL syntax") from exc
-    if parts.scheme or parts.netloc or parts.query:
+    if parts.scheme or parts.netloc or "?" in raw.partition("#")[0]:
         raise AdmissionError("external-reference", location, "schemes, authorities, and queries are outside the model")
     if parts.path.startswith("/") or "\\" in parts.path:
         raise AdmissionError("external-reference", location, "absolute or backslash paths are outside the model")
-    fragment = parts.fragment or None
+    fragment = parts.fragment if "#" in raw else None
     if fragment is not None:
         _valid_name(fragment, location + "#fragment")
     if not parts.path:
