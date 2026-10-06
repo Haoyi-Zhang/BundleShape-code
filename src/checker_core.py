@@ -1197,7 +1197,7 @@ def verify_certificate(left_dir: str | Path, right_dir: str | Path, certificate:
         return {"accepted": False, "decision": decision, "reason": "bad-certificate-schema"}
     if decision == "out-of-language":
         side = certificate.get("side")
-        if side not in {"left", "right"}:
+        if not isinstance(side, str) or side not in {"left", "right"}:
             return {"accepted": False, "decision": decision, "reason": "bad-out-of-language-side"}
         try:
             parse_bundle(left_dir if side == "left" else right_dir)

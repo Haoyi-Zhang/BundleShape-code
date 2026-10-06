@@ -114,6 +114,13 @@ immaterial. Empty rules, nested blocks, at-rules, duplicate properties,
 shorthands, custom properties, `!important`, `var()`, and unrecognized
 properties are rejected.
 
+The lexical admission boundary is stricter than these syntactic categories.
+After comment removal, any `@` anywhere in a CSS resource is excluded, including
+quoted strings. The case-insensitive substrings `!important` and `var(` are
+excluded anywhere in a normalized property value, also inside quoted strings.
+The `@` spelling is reserved for canonical resource markers; the admitted
+literal domain does not include these spellings.
+
 Selectors use only type selectors, `*`, ID selectors, class selectors, and the
 four combinators (descendant, child, adjacent sibling, general sibling). Attribute
 selectors, pseudo-classes, pseudo-elements, functions, and malformed adjacent
