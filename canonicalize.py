@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 from src.producer_core import AdmissionError, EnvironmentFailure, canonical_digest, parse_bundle
+from src.output_paths import write_text_exclusive
 
 
 def main() -> int:
@@ -26,7 +27,7 @@ def main() -> int:
         code = 2
     text = json.dumps(obj, indent=2, sort_keys=True) + "\n"
     if args.output:
-        args.output.write_text(text, encoding="utf-8")
+        write_text_exclusive(args.output, text)
     else:
         print(text, end="")
     return code

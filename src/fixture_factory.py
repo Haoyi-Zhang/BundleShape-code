@@ -4,10 +4,10 @@ from __future__ import annotations
 import base64
 import json
 import posixpath
-import shutil
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
 from typing import Any
+from .output_paths import fresh_directory
 
 PNG_1X1 = base64.b64decode(
     "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
@@ -123,9 +123,7 @@ def emit_bundle(destination: str | Path, index: int, options: dict[str, Any] | N
     """Emit one entirely owned, noninteractive, local-only bundle."""
     options = dict(options or {})
     dest = Path(destination)
-    if dest.exists():
-        shutil.rmtree(dest)
-    dest.mkdir(parents=True)
+    fresh_directory(dest)
     paths = dict(PATH_SETS[int(options.get("path_set", 0))])
     ids = _renamed_ids(index, bool(options.get("rename_ids")))
     classes = _renamed_classes(index, bool(options.get("rename_classes")))
@@ -228,9 +226,7 @@ def emit_bundle(destination: str | Path, index: int, options: dict[str, Any] | N
 
 def emit_owned_suite(destination: str | Path, count: int = 24) -> None:
     dest = Path(destination)
-    if dest.exists():
-        shutil.rmtree(dest)
-    dest.mkdir(parents=True)
+    fresh_directory(dest)
     for index in range(count):
         emit_bundle(dest / f"fixture-{index:02d}", index)
 
@@ -240,9 +236,7 @@ def emit_variant_suite(base_destination: str | Path, output_destination: str | P
     # regenerated from the same owned specification rather than source rewriting.
     _ = Path(base_destination)
     out = Path(output_destination)
-    if out.exists():
-        shutil.rmtree(out)
-    out.mkdir(parents=True)
+    fresh_directory(out)
     records: list[dict[str, Any]] = []
     for index in range(count):
         for variant in LEGAL_VARIANTS + INVALID_VARIANTS:
@@ -255,8 +249,7 @@ def emit_variant_suite(base_destination: str | Path, output_destination: str | P
 def emit_global_coupling_pair(destination: str | Path) -> tuple[Path, Path]:
     """Two eligible bundles that match resource-locally but not globally."""
     dest = Path(destination)
-    if dest.exists():
-        shutil.rmtree(dest)
+    fresh_directory(dest)
     left = dest / "left"
     right = dest / "right"
     for root, names, swapped in [(left, ("a", "b"), False), (right, ("x", "y"), True)]:

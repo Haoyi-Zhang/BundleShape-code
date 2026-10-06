@@ -49,8 +49,12 @@ class EnvironmentFailure(RuntimeError):
         return {"code": self.code, "location": self.location, "detail": self.detail}
 
 
-def _stat_signature(st: os.stat_result) -> tuple[int, ...]:
-    return (st.st_dev, st.st_ino, st.st_mode, st.st_size, st.st_mtime_ns, st.st_ctime_ns)
+def _stat_signature(st: os.stat_result, *, cross_api: bool = False) -> tuple[int, ...]:
+    # Windows runtimes may expose birth time as path-stat ctime but change time
+    # as fstat ctime. Compare ctime within each API, never across those meanings.
+    timestamp = (getattr(st, "st_birthtime_ns", 0)
+                 if cross_api and os.name == "nt" else st.st_ctime_ns)
+    return (st.st_dev, st.st_ino, st.st_mode, st.st_size, st.st_mtime_ns, timestamp)
 
 
 def _regular_stat(path: Path, location: str) -> os.stat_result:
@@ -70,7 +74,7 @@ def _read_stable(path: Path, location: str, before: os.stat_result, cap: int) ->
     try:
         with path.open("rb") as handle:
             opened = os.fstat(handle.fileno())
-            if _stat_signature(before) != _stat_signature(opened):
+            if _stat_signature(before, cross_api=True) != _stat_signature(opened, cross_api=True):
                 raise EnvironmentFailure("file-changed", location, "changed before read")
             data = handle.read(cap + 1)
             after_read = os.fstat(handle.fileno())
@@ -78,7 +82,7 @@ def _read_stable(path: Path, location: str, before: os.stat_result, cap: int) ->
     except OSError as exc:
         raise EnvironmentFailure("read-failed", location, type(exc).__name__) from exc
     if (len(data) != before.st_size or len(data) > cap
-            or _stat_signature(before) != _stat_signature(after_read)
+            or _stat_signature(opened) != _stat_signature(after_read)
             or _stat_signature(before) != _stat_signature(after_path)):
         raise EnvironmentFailure("file-changed", location, "changed during read")
     return data

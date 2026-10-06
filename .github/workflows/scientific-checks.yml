@@ -1,0 +1,37 @@
+name: Offline scientific checks
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  owned-finite-science:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # official v4.2.2
+        with:
+          persist-credentials: false
+      - name: Run delivered offline standard-library campaigns
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir ci-logs
+          python3 --version > ci-logs/runtime.txt 2>&1
+          timeout --signal=TERM --kill-after=5s 300s python3 -B reproduce.py --out ci-science > ci-logs/reproduce.log 2>&1
+      - name: Preserve raw output and logs even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # official v4.6.2
+        with:
+          name: owned-finite-science-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ci-science/
+            ci-logs/
+          if-no-files-found: error
+          retention-days: 7

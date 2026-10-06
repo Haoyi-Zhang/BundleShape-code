@@ -80,6 +80,8 @@ def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--actual", required=True, type=Path)
     p.add_argument("--expected", required=True, type=Path)
+    p.add_argument("--expected-unit", type=Path,
+                   help="explicit measured receipt for an enlarged current test domain; archived unit result stays unchanged")
     args = p.parse_args()
     mismatches = []
     for name in EXACT:
@@ -88,10 +90,14 @@ def main() -> int:
             mismatches.append(name)
     for name in ["combination-summary.json", "oracle-summary.json", "stress-summary.json", "unit-summary.json", "evaluation-summary.json"]:
         a = args.actual / name; e = args.expected / name
+        if name == "unit-summary.json" and args.expected_unit is not None:
+            e = args.expected_unit
         if (not a.exists() or not e.exists() or not telemetry_valid(load(a))
                 or normalized(name, load(a)) != normalized(name, load(e))):
             mismatches.append(name)
     result = {"matched": not mismatches, "mismatches": mismatches, "compared": len(EXACT) + 5}
+    if args.expected_unit is not None:
+        result["expected_unit_override"] = str(args.expected_unit)
     print(json.dumps(result, sort_keys=True))
     return 0 if not mismatches else 1
 

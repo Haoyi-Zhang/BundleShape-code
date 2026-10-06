@@ -9,6 +9,8 @@ import json
 from pathlib import Path
 import sys
 import unittest
+import tempfile
+from src.output_paths import fresh_directory, write_text_exclusive
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / 'tests'))
@@ -33,6 +35,10 @@ def main() -> int:
     p=argparse.ArgumentParser()
     p.add_argument('--out',type=Path,default=Path('reproduced'))
     args=p.parse_args()
+    fresh_directory(args.out)
+    temp = args.out.resolve() / "temporary-fixtures"
+    temp.mkdir()
+    tempfile.tempdir = str(temp)
     runner=unittest.TextTestRunner(stream=sys.stderr,verbosity=1,resultclass=Results)
     result=runner.run(unittest.defaultTestLoader.loadTestsFromTestCase(RepairTests))
     case=RepairTests();case.setUp()
@@ -81,8 +87,7 @@ def main() -> int:
                                 'incoming_corresponding_identical_lines':933},
             'unavailable_study':absence,
             'scope':'owned finite regression subset and read-only lineage/absence checks; no independent parser or natural-source experiment'}
-    args.out.mkdir(parents=True,exist_ok=True)
-    (args.out/'repair-acceptance.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
+    write_text_exclusive(args.out/'repair-acceptance.json', json.dumps(report,indent=2,sort_keys=True)+'\n')
     print(json.dumps({'passed':passed,'targeted_test_methods':result.testsRun,'common_core_definitions':len(common),'negative_asset_wire_bytes':examples['two-2MiB-assets']['compact_wire_bytes_with_newline']},sort_keys=True))
     return 0 if passed else 1
 

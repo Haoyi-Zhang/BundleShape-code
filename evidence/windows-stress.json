@@ -1,0 +1,62 @@
+{
+  "boundary": "Real Windows producer-plus-checker times; no POSIX RSS/swap measurement or Linux reproduction claim.",
+  "canonical_bytes_per_endpoint": 305053,
+  "canonical_equal": true,
+  "certificate_bytes_without_newline": 49432,
+  "cpu_samples_seconds": [
+    0.359375,
+    0.40625,
+    0.375,
+    0.375,
+    0.359375
+  ],
+  "dimensions": {
+    "blocks": 1200,
+    "classes": 1201,
+    "content_pages": 16,
+    "css_declarations": 3601,
+    "css_rules": 1200,
+    "html_resources": 17,
+    "ids": 1200,
+    "resources": 19,
+    "root_html_pages": 1
+  },
+  "input_bytes_both_endpoints": 322897,
+  "median_wall_seconds": 0.3671587000062573,
+  "platform": "win32",
+  "rss_measured": false,
+  "verdicts": [
+    {
+      "accepted": true,
+      "decision": "equivalent",
+      "reason": null
+    },
+    {
+      "accepted": true,
+      "decision": "equivalent",
+      "reason": null
+    },
+    {
+      "accepted": true,
+      "decision": "equivalent",
+      "reason": null
+    },
+    {
+      "accepted": true,
+      "decision": "equivalent",
+      "reason": null
+    },
+    {
+      "accepted": true,
+      "decision": "equivalent",
+      "reason": null
+    }
+  ],
+  "wall_samples_seconds": [
+    0.3634567000044626,
+    0.4289911000014399,
+    0.3897383000003174,
+    0.3660738000035053,
+    0.3671587000062573
+  ]
+}

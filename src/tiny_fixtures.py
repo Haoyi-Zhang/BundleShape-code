@@ -3,8 +3,8 @@ from __future__ import annotations
 
 import json
 import posixpath
-import shutil
 from pathlib import Path
+from .output_paths import fresh_directory
 
 
 def _write(path: Path, text: str) -> None:
@@ -20,9 +20,7 @@ def _rel(source: str, target: str, fragment: str | None = None) -> str:
 def emit_tiny_bundle(destination: str | Path, family: int, variant: int) -> None:
     """Emit one member of an eight-way alpha/path/ordering orbit."""
     root = Path(destination)
-    if root.exists():
-        shutil.rmtree(root)
-    root.mkdir(parents=True)
+    fresh_directory(root)
     path_sets = [
         ("index.html", "detail.html"),
         ("home.html", "pages/info.html"),
@@ -88,9 +86,7 @@ def emit_tiny_bundle(destination: str | Path, family: int, variant: int) -> None
 
 def emit_tiny_suite(destination: str | Path, families: int = 8, variants: int = 8) -> list[dict[str, object]]:
     root = Path(destination)
-    if root.exists():
-        shutil.rmtree(root)
-    root.mkdir(parents=True)
+    fresh_directory(root)
     records: list[dict[str, object]] = []
     for family in range(families):
         for variant in range(variants):
@@ -108,9 +104,7 @@ _TINY_PNG = bytes.fromhex(
 
 def emit_tiny_css_bundle(destination: str | Path, family: int, variant: int) -> None:
     root = Path(destination)
-    if root.exists():
-        shutil.rmtree(root)
-    root.mkdir(parents=True)
+    fresh_directory(root)
     path_sets = [
         ("index.html", "detail.html", "base.css", "dot.png"),
         ("home.html", "docs/info.html", "css/theme.css", "media/pixel.png"),
@@ -178,9 +172,7 @@ def emit_tiny_css_bundle(destination: str | Path, family: int, variant: int) -> 
 
 def emit_tiny_css_suite(destination: str | Path, families: int = 4, variants: int = 8) -> list[dict[str, object]]:
     root = Path(destination)
-    if root.exists():
-        shutil.rmtree(root)
-    root.mkdir(parents=True)
+    fresh_directory(root)
     records: list[dict[str, object]] = []
     for family in range(families):
         for variant in range(variants):

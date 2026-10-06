@@ -32,27 +32,46 @@ extraction (or invoke the script by absolute path from any directory):
 python reproduce.py --out reproduced
 ```
 
-The driver pins one CPU where available, imposes a 512-MiB address-space cap,
+The driver pins one CPU where available, imposes a 512-MiB address-space cap and
+a 110-second CPU cap per process,
 executes one child at a time, and stops on error. Scientific evaluation itself
 uses one process and no child workers. No downloads are performed. Equivalent
 individual commands, from the repository root, are:
 
 ```sh
-python generate_fixtures.py
-python test.py --out reproduced
-python evaluate.py --out reproduced
-python static_assurance.py --out reproduced
-python repair_acceptance.py --out reproduced
-python verify_results.py --actual reproduced --expected results
+python generate_fixtures.py --out generated-fixtures
+python test.py --out unit-run
+python evaluate.py --out evaluation-run --work campaign-work
+python static_assurance.py --out static-run
+python repair_acceptance.py --out repair-run
+python test.py --suite regressions --out supplemental-run
 ```
 
-The final comparator checks **ten named result files** and prints
-`{"compared": 10, "matched": true, "mismatches": []}` on success.
+The reproduction driver uses separate stage directories, copies the actual unit
+receipt into its evaluation directory without modification, and saves each raw
+child log, command, exit code, timeout flag and elapsed time. Generators and result
+drivers refuse nonempty output directories; they do not delete prior fixtures.
+To compare individual stages, place the actual `unit-summary.json` beside the
+evaluation outputs, then run `verify_results.py` against that directory and
+`results/`, with `--expected-unit evidence/current-unit-summary.json` for the
+current test domain. The final comparator checks **ten named result files** and
+reports `compared: 10`, `matched: true`, and no mismatches on success, explicitly
+recording that unit-receipt override. Without it, the archived 84-test count
+correctly differs from the current 87-test run; that archived result is unchanged.
 Five files are byte-exact. Five JSON comparisons remove only documented
 wall/CPU/RSS/swap telemetry fields; all scientific fields, worker counts,
 decisions, counts and lengths remain exact. New measurements must be finite,
 non-negative and within the stated RSS/swap guard. This is not bit-identical
 performance reproduction. The additional static result is checked separately.
+
+`evidence/current-unit-summary.json` is the actual 87-test Windows receipt,
+not an edit to the retained 84-test result. `evidence/supplemental-unit-summary.json`
+records the six supplemental methods; `evidence/windows-stress.json` holds real
+five-repeat Windows timing with no RSS/swap substitution. The seven-file finite
+comparison is in `evidence/finite-checks.json`. These observations do not establish
+full Linux reproduction. The standalone-root `.github/workflows/scientific-checks.yml`
+prepares bounded offline science on pushes to `main` or manual dispatch, using
+runner-provided Python and always uploading raw logs/output, including failures.
 
 ## Certificate CLI
 
@@ -113,12 +132,15 @@ prefixes, and two unequal 2-MiB assets without an oversized certificate.
 * **72 base certificate instances**: 24 in each of three decision classes,
   **five mutations per instance**, hence 120 attempts per class and **360 total**;
   zero corrupted certificates accepted. This is not 360 independent originals.
-* **84 unit/boundary tests**, comprising 47 inherited tests and 37 targeted
-  regressions/read-only count checks; no failures, errors or skips.
+* The retained receipt records **84 unit/boundary tests**, comprising 47 inherited
+  tests and 37 targeted regressions/read-only count checks. The source now has
+  **87 methods**, including three additional URI-component tests, and a separate
+  **six-method supplemental suite**. Fresh Windows runs pass both, without skips.
 * Stress construction: **16 content HTML pages plus one root HTML = 17 HTML**,
   one CSS and one asset = **19 resources**. It has 1,200 IDs, 1,201 classes,
-  1,200 rules and 3,601 declarations. Current measured median wall is
-  0.335828 s, process peak RSS 119,324 KiB; one size/environment, not a scaling curve.
+  1,200 rules and 3,601 declarations. The retained Linux median wall is
+  0.335828 s, process peak RSS 119,324 KiB. The fresh Windows median is
+  0.367159 s; RSS was not measured there. Neither is a scaling curve.
 
 The corrected `stress` fields distinguish `content_pages`, `root_html_pages`,
 `html_resources` and `resources`. The former `pages:16` meant content pages only.
@@ -127,7 +149,8 @@ The corrected `stress` fields distinguish `content_pages`, `root_html_pages`,
 label. `evidence/retained-results/` holds the exact ten incoming observations,
 including their original timings and old field labels, unchanged. Field-level
 changes from those observations are recorded in `evidence/result-reconciliation.json`.
-Current results are fresh runs, not edits to historical measurements.
+The pre-existing `results/` measurements are retained unchanged by this review;
+the new Windows and finite recheck receipts are separately named in `evidence/`.
 The retained campaign's `certificate_bytes` field counts compact sorted-key ASCII
 JSON **without** a trailing newline. CLI wire-size receipts and the negative
 certificate size bound include that newline; the two measures differ by one byte
@@ -151,7 +174,7 @@ No live repository URL for this artifact is fabricated.
 ## Files and disclosure
 
 `src/` contains the implementation, `tests/` the tests, `docs/` the operational
-contract, `proofs/` written arguments, `results/` current outputs, `evidence/`
+contract, `proofs/` written arguments, `results/` retained outputs, `evidence/`
 original observations and repair checks. `claim_evidence_ledger.csv` maps claims
 to actual code/results. `baseline_trace/` retains the earlier narrow trace
 counterexample as background, not as full web evidence.

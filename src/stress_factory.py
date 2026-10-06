@@ -3,10 +3,10 @@ from __future__ import annotations
 
 import json
 import posixpath
-import shutil
 from pathlib import Path
 
 from .fixture_factory import PNG_1X1
+from .output_paths import fresh_directory
 
 
 def _write(path: Path, text: str) -> None:
@@ -26,9 +26,7 @@ def emit_stress_bundle(
     transformed: bool = False,
 ) -> dict[str, int]:
     root = Path(destination)
-    if root.exists():
-        shutil.rmtree(root)
-    root.mkdir(parents=True)
+    fresh_directory(root)
     root_path = "site/home.html" if transformed else "index.html"
     css_path = "site/css/theme.css" if transformed else "styles/main.css"
     asset_path = "site/media/dot.png" if transformed else "assets/dot.png"

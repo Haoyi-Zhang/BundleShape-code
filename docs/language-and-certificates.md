@@ -28,7 +28,11 @@ duplicate entries, and unreachable listed resources are rejected. The manifest a
 bundle directory must be a non-symlinked directory. Metadata sizes are
 checked before reads where possible; observed device/inode/type/size/time changes across a read are environmental
 failures, not structural rejection. The model assumes a quiescent directory;
-these checks do not prove atomic snapshot consistency. The
+these checks do not prove atomic snapshot consistency. Path and open-handle
+metadata are each compared to later observations from the same API. Cross-API
+comparisons retain device, inode, type, size, modification time and, on Windows
+when exposed, birth time: Windows `ctime` meanings may differ between path-stat
+and handle-stat results. Within-API `ctime` changes still abort the read. The
 root is an HTML file. Limits are 64 resources, 8 MiB total bytes, 2 MiB per text
 file, 10,000 HTML events, 4,000 CSS rules, and 8,000 declarations **summed over the whole
 bundle**, 80-character names,

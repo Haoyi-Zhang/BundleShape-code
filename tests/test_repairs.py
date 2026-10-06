@@ -29,12 +29,11 @@ def html(body: str = "ab", head: str = "") -> str:
 
 class RepairTests(unittest.TestCase):
     def setUp(self):
-        self.tmp = tempfile.TemporaryDirectory(prefix="iwb-boundary-")
-        self.root = Path(self.tmp.name)
+        self.root = Path(tempfile.mkdtemp(prefix="iwb-boundary-"))
         self.serial = 0
 
     def tearDown(self):
-        self.tmp.cleanup()
+        pass  # Keep the actual finite inputs for review; no recursive deletion.
 
     def bundle(self, files=None, *, body="ab", css=None, asset=None, resources=None):
         self.serial += 1

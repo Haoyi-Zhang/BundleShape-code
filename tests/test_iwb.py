@@ -85,7 +85,7 @@ class BoundaryTests(unittest.TestCase):
         emit_bundle(self.temp / "base", 0)
 
     def tearDown(self):
-        shutil.rmtree(self.temp)
+        pass  # Retain bounded fixtures for inspection; never recursively delete.
 
     def _modify(self, relative: str, old: str, new: str) -> Path:
         target = self.temp / "case"
@@ -297,7 +297,7 @@ class OracleAndAblationTests(unittest.TestCase):
         self.temp = Path(tempfile.mkdtemp(prefix="iwb-oracle-"))
 
     def tearDown(self):
-        shutil.rmtree(self.temp)
+        pass  # Retain bounded fixtures for inspection; never recursively delete.
 
     def test_tiny_exact_positive(self):
         emit_tiny_bundle(self.temp / "a", 2, 0); emit_tiny_bundle(self.temp / "b", 2, 7)
@@ -317,9 +317,11 @@ class OracleAndAblationTests(unittest.TestCase):
 
     def test_canonical_agrees_with_oracle(self):
         for fa, fb in [(0, 0), (0, 1), (4, 4), (5, 7)]:
-            emit_tiny_bundle(self.temp / "a", fa, 1); emit_tiny_bundle(self.temp / "b", fb, 6)
-            exact = exact_equivalent(self.temp / "a", self.temp / "b")[0]
-            canonical = parse_bundle(self.temp / "a").canonical_bytes == parse_bundle(self.temp / "b").canonical_bytes
+            left = self.temp / f"a-{fa}-{fb}"
+            right = self.temp / f"b-{fa}-{fb}"
+            emit_tiny_bundle(left, fa, 1); emit_tiny_bundle(right, fb, 6)
+            exact = exact_equivalent(left, right)[0]
+            canonical = parse_bundle(left).canonical_bytes == parse_bundle(right).canonical_bytes
             self.assertEqual(canonical, exact)
 
     def test_local_alpha_false_positive(self):

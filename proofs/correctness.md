@@ -260,7 +260,8 @@ exercise concrete programs and finite cases:
 - an exhaustive orbit comparison over 5,120 ordered tiny pairs and 18,176 tried
   candidate bijections;
 - 360 mutation attempts on 72 base certificate instances (24 per decision, five each);
-- 84 unit/boundary tests;
+- 84 unit/boundary tests in the retained observation; 87 in the current source
+  domain, plus six separately run supplemental regressions;
 - one global-coupling negative control;
 - one bounded stress pair.
 

@@ -1,0 +1,35 @@
+{
+  "boundary": "Seven finite output files checked; Linux stress telemetry and full comparator are not substituted.",
+  "comparisons": [
+    {
+      "file": "variant-results.csv",
+      "matched": true
+    },
+    {
+      "file": "baseline-summary.csv",
+      "matched": true
+    },
+    {
+      "file": "variant-summary.json",
+      "matched": true
+    },
+    {
+      "file": "coupling-control.json",
+      "matched": true
+    },
+    {
+      "file": "mutation-summary.json",
+      "matched": true
+    },
+    {
+      "file": "combination-summary.json",
+      "matched": true
+    },
+    {
+      "file": "oracle-summary.json",
+      "matched": true
+    }
+  ],
+  "full_ten_file_comparator_run": false,
+  "passed": true
+}

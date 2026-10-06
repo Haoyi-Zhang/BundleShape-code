@@ -3,6 +3,7 @@
 from __future__ import annotations
 import argparse, ast, json, py_compile
 from pathlib import Path
+from src.output_paths import fresh_directory, write_text_exclusive
 
 HERE=Path(__file__).resolve().parent
 FORBIDDEN_NETWORK={'socket','requests','ftplib','telnetlib','smtplib'}
@@ -40,7 +41,8 @@ def audit_file(path: Path) -> dict:
 
 
 def main() -> int:
-    ap=argparse.ArgumentParser(); ap.add_argument('--out',type=Path,default=HERE/'results'); args=ap.parse_args()
+    ap=argparse.ArgumentParser(); ap.add_argument('--out',type=Path,required=True); args=ap.parse_args()
+    fresh_directory(args.out)
     src=HERE/'src'
     files=sorted(src.rglob('*.py'))
     if not files: raise SystemExit('no Python implementation files under src/')
@@ -65,8 +67,8 @@ def main() -> int:
         'shell_true_calls':0,
         'files':rows,
     }
-    out=args.out.resolve(); out.mkdir(parents=True,exist_ok=True)
-    (out/'static_assurance.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n',encoding='utf-8')
+    out=args.out.resolve()
+    write_text_exclusive(out/'static_assurance.json', json.dumps(result,indent=2,sort_keys=True)+'\n')
     print(json.dumps({k:v for k,v in result.items() if k!='files'},sort_keys=True))
     return 0
 if __name__=='__main__': raise SystemExit(main())

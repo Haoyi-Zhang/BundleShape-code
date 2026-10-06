@@ -8,7 +8,10 @@ import csv
 import json
 from pathlib import Path
 import random
-import resource
+try:
+    import resource
+except ModuleNotFoundError:
+    resource = None  # Non-telemetry finite campaigns remain importable on Windows.
 import statistics
 import time
 from typing import Any, Callable
@@ -27,11 +30,12 @@ from src.fixture_factory import (
 from src.producer_core import AdmissionError as ProducerAdmissionError, canonical_digest, make_certificate, parse_bundle
 from src.stress_factory import emit_stress_bundle
 from src.tiny_fixtures import emit_tiny_css_suite, emit_tiny_suite
+from src.output_paths import fresh_directory, write_text_exclusive
 
 
 def dump_json(path: Path, obj: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    write_text_exclusive(path, json.dumps(obj, indent=2, sort_keys=True) + "\n")
 
 
 def run_variant_campaign(root: Path, out: Path) -> tuple[list[dict[str, Any]], dict[str, Any]]:
@@ -130,7 +134,7 @@ def run_variant_campaign(root: Path, out: Path) -> tuple[list[dict[str, Any]], d
             "negative_recall": tn / (tn + fp),
         }
     out.mkdir(parents=True, exist_ok=True)
-    with (out / "variant-results.csv").open("w", newline="", encoding="utf-8") as handle:
+    with (out / "variant-results.csv").open("x", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(records[0]))
         writer.writeheader()
         writer.writerows(records)
@@ -157,9 +161,7 @@ def run_combination_campaign(root: Path, out: Path) -> dict[str, Any]:
     different_flags = ["changed_text", "swap_siblings", "changed_css", "changed_selector", "changed_asset"]
     rejected_flags = ["duplicate_id", "forbidden_form", "broken_ref"]
     campaign_root = root / "fixtures" / "combinations"
-    if campaign_root.exists():
-        import shutil
-        shutil.rmtree(campaign_root)
+    fresh_directory(campaign_root)
     failures: list[dict[str, Any]] = []
     decision_counts = {key: 0 for key in ["equivalent", "different", "out-of-language"]}
     canonical_or_rejection_agreements = 0
@@ -380,6 +382,8 @@ def run_mutations(root: Path, out: Path) -> dict[str, Any]:
 
 
 def run_stress(root: Path, out: Path) -> dict[str, Any]:
+    if resource is None:
+        raise RuntimeError("stress telemetry requires the POSIX resource module; no substitute RSS is recorded")
     meta = emit_stress_bundle(root / "fixtures" / "stress" / "left", transformed=False)
     emit_stress_bundle(root / "fixtures" / "stress" / "right", transformed=True)
     left = root / "fixtures" / "stress" / "left"
@@ -447,18 +451,25 @@ def write_baseline_csv(out: Path, summary: dict[str, Any], coupling: dict[str, A
             "accuracy": m["accuracy"],
             "coupling_negative": not coupling[name + "_equal"],
         })
-    with (out / "baseline-summary.csv").open("w", newline="", encoding="utf-8") as handle:
+    with (out / "baseline-summary.csv").open("x", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
         writer.writeheader(); writer.writerows(rows)
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--out", default="results")
+    parser.add_argument("--out", required=True)
+    parser.add_argument("--work", required=True, type=Path,
+                        help="fresh directory for generated campaign fixtures")
     args = parser.parse_args()
-    root = Path(__file__).resolve().parent
+    if resource is None:
+        parser.error("full evaluation requires POSIX resource telemetry; use Linux")
+    root = args.work.resolve()
     out = Path(args.out).resolve()
-    out.mkdir(parents=True, exist_ok=True)
+    if root == out or root in out.parents or out in root.parents:
+        parser.error("work and output directories must be disjoint")
+    fresh_directory(root)
+    fresh_directory(out)
     start_wall = time.perf_counter(); start_cpu = time.process_time()
     records, variants = run_variant_campaign(root, out)
     combinations = run_combination_campaign(root, out)
