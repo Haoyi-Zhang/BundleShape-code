@@ -24,6 +24,7 @@ jobs:
           set -euo pipefail
           mkdir ci-logs
           python3 --version > ci-logs/runtime.txt 2>&1
+          python3 -B -m unittest discover -s regressions -v > ci-logs/current-regressions.log 2>&1
           timeout --signal=TERM --kill-after=5s 300s python3 -B reproduce.py --out ci-science > ci-logs/reproduce.log 2>&1
       - name: Preserve raw output and logs even on failure
         if: always()

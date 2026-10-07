@@ -75,6 +75,18 @@ runner-provided Python and always uploading raw logs/output, including failures.
 
 ## Certificate CLI
 
+Positive replay constructs the three target identity dictionaries once per
+invocation, after exact total-bijection and root validation, and reuses them
+read-only for HTML/CSS resources. Endpoint bindings, sorted mismatch order and
+checker isolation from the producer are unchanged; no speed measurement is
+claimed. `python -B -m unittest discover -s regressions -v` includes six new
+target-identity methods alongside the six retained supplemental methods. CI
+runs this discovery explicitly as well as through the existing reproduction
+driver. The new oracle enumerates global maps over its own finite typed fixture
+specification, not production-parsed records; it is not an independent general
+HTML/CSS parser. The archived six-method receipt and 87-test receipt remain
+unchanged and do not describe this expanded twelve-method supplemental suite.
+
 Choose a fresh output name; existing outputs are deliberately not overwritten.
 
 ```sh
@@ -135,7 +147,9 @@ prefixes, and two unequal 2-MiB assets without an oversized certificate.
 * The retained receipt records **84 unit/boundary tests**, comprising 47 inherited
   tests and 37 targeted regressions/read-only count checks. The source now has
   **87 methods**, including three additional URI-component tests, and a separate
-  **six-method supplemental suite**. Fresh Windows runs pass both, without skips.
+  **six-method retained supplemental suite**. The cited Windows receipts pass
+  both without skips; the additional six target-identity methods described above
+  are outside those historical receipts.
 * Stress construction: **16 content HTML pages plus one root HTML = 17 HTML**,
   one CSS and one asset = **19 resources**. It has 1,200 IDs, 1,201 classes,
   1,200 rules and 3,601 declarations. The retained Linux median wall is

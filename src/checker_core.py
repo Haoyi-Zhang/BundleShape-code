@@ -1056,6 +1056,7 @@ def _match_html(
     resource_map: dict[str, str],
     id_map: dict[str, str],
     class_map: dict[str, str],
+    target_identity_maps: tuple[dict[str, str], dict[str, str], dict[str, str]],
 ) -> bool:
     def norm(path: str, events: list[HtmlEvent], rmap: dict[str, str], imap: dict[str, str], cmap: dict[str, str]) -> list[Any]:
         out: list[Any] = []
@@ -1095,9 +1096,7 @@ def _match_html(
     target_norm = norm(
         target_path,
         target_events,
-        {name: name for name in resource_map.values()},
-        {name: name for name in id_map.values()},
-        {name: name for name in class_map.values()},
+        *target_identity_maps,
     )
     return source_norm == target_norm
 
@@ -1110,6 +1109,7 @@ def _match_css(
     resource_map: dict[str, str],
     id_map: dict[str, str],
     class_map: dict[str, str],
+    target_identity_maps: tuple[dict[str, str], dict[str, str], dict[str, str]],
 ) -> bool:
     def norm(path: str, rules: tuple[CssRule, ...], rmap: dict[str, str], imap: dict[str, str], cmap: dict[str, str]) -> list[Any]:
         out: list[Any] = []
@@ -1151,9 +1151,7 @@ def _match_css(
     return norm(source_path, source_rules, resource_map, id_map, class_map) == norm(
         target_path,
         target_rules,
-        {name: name for name in resource_map.values()},
-        {name: name for name in id_map.values()},
-        {name: name for name in class_map.values()},
+        *target_identity_maps,
     )
 
 
@@ -1163,6 +1161,13 @@ def _replay_positive(left: ParsedBundle, right: ParsedBundle, cert: dict[str, An
     cmap = _require_total_bijection(cert.get("class_map"), set(left.class_order), set(right.class_order), "class_map")
     if rmap.get(left.root) != right.root:
         raise AdmissionError("bad-certificate-map", "resource_map", "root is not mapped to root")
+    # Invocation-local codomain identities, only after totality and root checks.
+    # The matchers only read these dictionaries; no endpoint cache is retained.
+    target_identity_maps = (
+        {name: name for name in rmap.values()},
+        {name: name for name in imap.values()},
+        {name: name for name in cmap.values()},
+    )
     for source_path, target_path in sorted(rmap.items()):
         source = left.resources[source_path]
         target = right.resources[target_path]
@@ -1171,9 +1176,9 @@ def _replay_positive(left: ParsedBundle, right: ParsedBundle, cert: dict[str, An
         if source["kind"] == "asset":
             ok = source["bytes"] == target["bytes"]
         elif source["kind"] == "html":
-            ok = _match_html(source_path, target_path, source["events"], target["events"], rmap, imap, cmap)
+            ok = _match_html(source_path, target_path, source["events"], target["events"], rmap, imap, cmap, target_identity_maps)
         else:
-            ok = _match_css(source_path, target_path, source["rules"], target["rules"], rmap, imap, cmap)
+            ok = _match_css(source_path, target_path, source["rules"], target["rules"], rmap, imap, cmap, target_identity_maps)
         if not ok:
             raise AdmissionError("mapped-resource-mismatch", source_path, target_path)
 

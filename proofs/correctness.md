@@ -261,7 +261,9 @@ exercise concrete programs and finite cases:
   candidate bijections;
 - 360 mutation attempts on 72 base certificate instances (24 per decision, five each);
 - 84 unit/boundary tests in the retained observation; 87 in the current source
-  domain, plus six separately run supplemental regressions;
+  domain, plus six retained supplemental regressions; the current supplemental
+  source also includes six target-identity regressions, outside those archived
+  receipts and without changing the quantified relation;
 - one global-coupling negative control;
 - one bounded stress pair.
 
