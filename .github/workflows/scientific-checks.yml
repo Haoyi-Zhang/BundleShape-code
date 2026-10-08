@@ -24,8 +24,20 @@ jobs:
           set -euo pipefail
           mkdir ci-logs
           python3 --version > ci-logs/runtime.txt 2>&1
-          python3 -B -m unittest discover -s regressions -v > ci-logs/current-regressions.log 2>&1
-          timeout --signal=TERM --kill-after=5s 300s python3 -B reproduce.py --out ci-science > ci-logs/reproduce.log 2>&1
+          if ! python3 -B -m unittest discover -s regressions -v > ci-logs/current-regressions.log 2>&1; then
+            cat ci-logs/current-regressions.log
+            exit 1
+          fi
+          if ! timeout --signal=TERM --kill-after=5s 300s python3 -B reproduce.py --out ci-science > ci-logs/reproduce.log 2>&1; then
+            cat ci-logs/reproduce.log
+            for log in ci-science/*.log; do
+              if [ -f "$log" ]; then
+                printf '\n%s\n' "$log"
+                tail -n 80 "$log"
+              fi
+            done
+            exit 1
+          fi
       - name: Preserve raw output and logs even on failure
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # official v4.6.2
