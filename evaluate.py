@@ -38,6 +38,27 @@ def dump_json(path: Path, obj: Any) -> None:
     write_text_exclusive(path, json.dumps(obj, indent=2, sort_keys=True) + "\n")
 
 
+def proposed_metrics(records: list[dict[str, Any]]) -> dict[str, Any]:
+    eligible=[r for r in records if r['expected_kind'] in {'legal','different'}]
+    counts={'true_positive':0,'false_negative':0,'true_negative':0,'false_positive':0,'abstentions':0}
+    for row in eligible:
+        decision=row['producer_decision']
+        if not row['checker_accepted'] or decision not in {'equivalent','different'}:
+            counts['abstentions']+=1
+        elif row['expected_kind']=='legal':
+            counts['true_positive' if decision=='equivalent' else 'false_negative']+=1
+        else:
+            counts['true_negative' if decision=='different' else 'false_positive']+=1
+    positives=sum(r['expected_kind']=='legal' for r in eligible)
+    negatives=len(eligible)-positives
+    correct=sum(r['producer_decision']==r['expected_decision'] and r['checker_accepted'] for r in records)
+    return {**counts,'eligible_pairs':len(eligible),
+            'accuracy':(counts['true_positive']+counts['true_negative'])/len(eligible) if eligible else None,
+            'positive_recall':counts['true_positive']/positives if positives else None,
+            'negative_recall':counts['true_negative']/negatives if negatives else None,
+            'three_way_correct':correct,'three_way_accuracy':correct/len(records) if records else None}
+
+
 def run_variant_campaign(root: Path, out: Path) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     owned = root / "fixtures" / "owned"
     variants = root / "fixtures" / "variants"
@@ -100,9 +121,8 @@ def run_variant_campaign(root: Path, out: Path) -> tuple[list[dict[str, Any]], d
             elif resource_obj["kind"] == "css":
                 domain["css_rules"] += len(resource_obj["rules"])
                 domain["css_declarations"] += sum(len(rule.declarations) for rule in resource_obj["rules"])
-    proposed_correct = sum(
-        r["producer_decision"] == r["expected_decision"] and r["checker_accepted"] for r in records
-    )
+    observed_proposed=proposed_metrics(records)
+    proposed_correct=observed_proposed['three_way_correct']
     summary: dict[str, Any] = {
         "pairs": len(records),
         "eligible_pairs": len(eligible),
@@ -110,7 +130,9 @@ def run_variant_campaign(root: Path, out: Path) -> tuple[list[dict[str, Any]], d
         "different_pairs": sum(r["expected_kind"] == "different" for r in records),
         "out_of_language_pairs": sum(r["expected_kind"] == "rejected" for r in records),
         "proposed_correct": proposed_correct,
-        "proposed_accuracy": proposed_correct / len(records),
+        "proposed_accuracy": observed_proposed['accuracy'],
+        "proposed_admitted": observed_proposed,
+        "three_way_accuracy": observed_proposed['three_way_accuracy'],
         "certificate_bytes": {
             "min": min(r["certificate_bytes"] for r in records),
             "median": statistics.median(r["certificate_bytes"] for r in records),
@@ -435,11 +457,13 @@ def _swap_kib() -> int | None:
 
 def write_baseline_csv(out: Path, summary: dict[str, Any], coupling: dict[str, Any]) -> None:
     rows = []
+    observed=summary['proposed_admitted']
     proposed = {
         "method": "certificate normal form",
-        "tp": summary["equivalent_pairs"], "fn": 0,
-        "tn": summary["different_pairs"], "fp": 0,
-        "accuracy": summary["proposed_accuracy"],
+        "tp": observed['true_positive'], "fn": observed['false_negative'],
+        "tn": observed['true_negative'], "fp": observed['false_positive'],
+        "accuracy": observed['accuracy'],
+        "abstentions": observed['abstentions'],
         "coupling_negative": coupling["producer_decision"] == "different" and coupling["checker_accepted"],
     }
     rows.append(proposed)
@@ -449,6 +473,7 @@ def write_baseline_csv(out: Path, summary: dict[str, Any], coupling: dict[str, A
             "tp": m["true_positive"], "fn": m["false_negative"],
             "tn": m["true_negative"], "fp": m["false_positive"],
             "accuracy": m["accuracy"],
+            "abstentions": 0,
             "coupling_negative": not coupling[name + "_equal"],
         })
     with (out / "baseline-summary.csv").open("x", newline="", encoding="utf-8") as handle:

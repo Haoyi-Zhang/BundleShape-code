@@ -56,5 +56,19 @@
   "out_of_language_pairs": 72,
   "pairs": 480,
   "proposed_accuracy": 1.0,
-  "proposed_correct": 480
+  "proposed_admitted": {
+    "abstentions": 0,
+    "accuracy": 1.0,
+    "eligible_pairs": 408,
+    "false_negative": 0,
+    "false_positive": 0,
+    "negative_recall": 1.0,
+    "positive_recall": 1.0,
+    "three_way_accuracy": 1.0,
+    "three_way_correct": 480,
+    "true_negative": 120,
+    "true_positive": 288
+  },
+  "proposed_correct": 480,
+  "three_way_accuracy": 1.0
 }

@@ -3,8 +3,7 @@
 This standalone artifact concerns a finite, static IWB language, not a browser
 model, phishing detector, provenance proof or arbitrary HTML/CSS equivalence.
 It reads owned benign local fixtures; no scripts, forms, browser, network, GPU,
-model API or external scientific service are executed. The project remains an
-internal TSE-oriented research draft, not a submitted or accepted paper.
+model API or external scientific service are executed.
 
 ## Claims and trusted base
 
@@ -79,13 +78,22 @@ Positive replay constructs the three target identity dictionaries once per
 invocation, after exact total-bijection and root validation, and reuses them
 read-only for HTML/CSS resources. Endpoint bindings, sorted mismatch order and
 checker isolation from the producer are unchanged; no speed measurement is
-claimed. `python -B -m unittest discover -s regressions -v` includes six new
-target-identity methods alongside the six retained supplemental methods. CI
+claimed. `python -B -m unittest discover -s regressions -v` includes six
+target-identity methods and five observed-metric methods alongside the six
+retained supplemental methods. CI
 runs this discovery explicitly as well as through the existing reproduction
 driver. The new oracle enumerates global maps over its own finite typed fixture
 specification, not production-parsed records; it is not an independent general
 HTML/CSS parser. The archived six-method receipt and 87-test receipt remain
-unchanged and do not describe this expanded twelve-method supplemental suite.
+unchanged and do not describe the seventeen-method supplemental suite.
+`evidence/observed-metrics-regressions.json` records the actual Windows run of
+all seventeen methods with no failures, errors or skips. Its five metric tests
+exercise failed classifications and rejected certificates. Baseline accuracy
+uses the same 408 admitted pairs as the proposed method; out-of-language pairs
+belong to the separate 480-pair three-way conformance measure. Rejected
+certificates on admitted pairs are abstentions, not correct negative decisions.
+The stored aggregates are recomputed from the unchanged raw decision rows;
+the recorded campaign timings are not replaced by these regression timings.
 
 Choose a fresh output name; existing outputs are deliberately not overwritten.
 
