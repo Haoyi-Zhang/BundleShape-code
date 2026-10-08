@@ -467,7 +467,8 @@ def write_baseline_csv(out: Path, summary: dict[str, Any], coupling: dict[str, A
         "coupling_negative": coupling["producer_decision"] == "different" and coupling["checker_accepted"],
     }
     rows.append(proposed)
-    for name, m in summary["baselines"].items():
+    for name in sorted(summary["baselines"]):
+        m = summary["baselines"][name]
         rows.append({
             "method": name,
             "tp": m["true_positive"], "fn": m["false_negative"],
