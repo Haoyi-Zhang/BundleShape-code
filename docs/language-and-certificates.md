@@ -168,6 +168,16 @@ separators.
 
 ## 5. Declared equivalence
 
+The relation is over parsed records. Its source-to-record quotient decodes HTML
+character references in text and attributes; lowercases HTML tag and attribute
+names, CSS type-selector tokens, and CSS property names; and applies the stated
+comment, newline/NFC, blank-run, and outside-string whitespace rules. Local URL
+spellings resolve to typed target occurrences, including safe relative dot
+segments. Canonical CSS rewrites the whole admitted URL atom, including quotes
+and surrounding URL syntax, to `url(@rK)` for its target label. Remaining literal
+record fields are preserved after this quotient, not as raw source bytes. This
+does not assert browser equivalence.
+
 Two admitted bundles are equivalent when there exist total bijections over their
 resource paths, IDs, and classes such that:
 

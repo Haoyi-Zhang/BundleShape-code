@@ -19,6 +19,11 @@ the restricted scanner, which may join lexemes; the relation is not standard CSS
 token-stream or browser equivalence. Local transformations mean equality under
 these precisely declared normalizations, not unrestricted insertion inside any
 HTML lexical construct.
+The source-to-record quotient also decodes HTML character references in text and
+attributes, lowercases HTML tags/attribute names and CSS type-selector/property
+names, resolves local URL spellings, and replaces each whole canonical CSS URL
+atom (quotes and URL syntax included) by `url(@rK)`. Literal fields are exact
+after this quotient; it is not a browser-behavior equivalence.
 
 Let `R`, `I`, and `C` be the finite sets of resource paths, IDs, and classes.
 An admissible renaming is a triple of bijections over these sets that preserves
@@ -112,7 +117,8 @@ represented exactly.
 **Proof.** Sorting removes exactly the declared permutations. For HTML, maximal data-run concatenation precedes NFC/newline normalization and
 blank-run deletion, so comments cannot introduce new text-record boundaries.
 CSS prelexical erasure precedes its scanner; surviving spaces still separate
-selector tokens and strings remain literal. NFC/newline normalization
+remaining selector tokens and strings remain literal after the declared case
+folding, character-reference decoding, and URL-atom encoding. NFC/newline normalization
 is deterministic. Literal fields and ordered positions are copied. Names and
 paths are replaced by the invariant labels of Lemmas 1-3. Base64 is injective on
 finite byte strings. QED.

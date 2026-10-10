@@ -114,6 +114,13 @@ A successfully observed missing listed resource is instead a structural error.
 
 ## Precisely normalized boundaries
 
+The relation compares parsed records: HTML character references are decoded in
+text and attribute values; HTML tag/attribute names and CSS type-selector/property
+names are lowercased. Local URL spellings resolve to typed target occurrences,
+and canonical CSS replaces the whole URL atom, including quotes and URL syntax,
+by `url(@rK)`. Literal record fields are exact after this source-to-record
+quotient, which does not establish browser equivalence.
+
 HTML comments do not split data runs: concatenate callbacks until a structural
 event, normalize newline/NFC, then remove a wholly blank run. Thus `ab` and
 `a<!--c-->b` agree, but `a<!--c--> b` retains its internal space. Real tags
