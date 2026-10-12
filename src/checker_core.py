@@ -317,11 +317,19 @@ class _HTMLCollector(HTMLParser):
     def unknown_decl(self, data: str) -> None:
         raise AdmissionError("unknown-declaration", self._loc(), data[:80])
 
+    def goahead(self, end: int) -> None:
+        if end:
+            # close() first joins any feed fragments buffered by HTMLParser.
+            # Consume complete tokens before checking the unconsumed suffix,
+            # but still reject incomplete markup before tolerant EOF recovery.
+            super().goahead(0)
+            if self.rawdata.startswith("<!--"):
+                raise AdmissionError("bad-html-comment", self._loc(), "unterminated comment")
+            if self.rawdata.startswith("</"):
+                raise AdmissionError("bad-end-tag", self._loc(), "unterminated closing tag")
+        super().goahead(end)
+
     def close_checked(self) -> None:
-        if self.rawdata.startswith("<!--"):
-            raise AdmissionError("bad-html-comment", self._loc(), "unterminated comment")
-        if self.rawdata.startswith("</"):
-            raise AdmissionError("bad-end-tag", self._loc(), "unterminated closing tag")
         super().close()
         self._flush_text()
         if self.stack:

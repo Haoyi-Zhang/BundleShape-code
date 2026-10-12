@@ -36,7 +36,7 @@ def main() -> int:
         ["repair_acceptance.py", "--out", str(out / "repairs")],
         ["test.py", "--suite", "regressions", "--out", str(out / "supplemental")],
         ["verify_results.py", "--actual", str(out / "evaluation"), "--expected", str(root/"results"),
-         "--expected-unit", str(root / "evidence" / "lexical-admission-20261012" / "after-unit" / "unit-summary.json")],
+         "--expected-unit", str(root / "evidence" / "parser-streaming" / "unit-summary.json")],
     ]
     receipts = []
     for index, command in enumerate(commands):

@@ -271,8 +271,8 @@ exercise concrete programs and finite cases:
   candidate bijections;
 - 360 mutation attempts on 72 base certificate instances (24 per decision, five each);
 - 84 unit/boundary tests in the retained observation; an earlier receipt covers
-  87. The current domain has 96, including nine ordinary closing-token and
-  name-scope methods, plus 17 supplemental methods (six retained, six target
+  87. The current domain has 97, including ten closing-token and
+  name-scope methods with buffered-feed EOF coverage, plus 17 supplemental methods (six retained, six target
   identities and five observed-metric methods). These counts do not change the
   quantified relation;
 - one global-coupling negative control;

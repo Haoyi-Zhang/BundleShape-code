@@ -130,6 +130,38 @@ class HtmlLexicalAdmissionTests(unittest.TestCase):
                     parser.close_checked()
                 self.assertEqual(raised.exception.code, "bad-end-tag")
 
+    def test_final_feed_fragments_are_flushed_before_lexical_checks(self):
+        # Some Python runtimes buffer feed fragments outside rawdata. A valid
+        # final tag/comment must not look incomplete before close() joins them.
+        valid = (document(), document().replace("</html>", "</HTML \t\f>"),
+                 document() + '<!-- </p title="Notes"> -->')
+        invalid = tuple(document() + suffix for suffix in
+                        ("</", "</p", "</p ", '</p title="Notes"', "<!--Notes"))
+        invalid += (document().replace("</html>", '</html title="Notes">'),)
+        for core in CORES:
+            for text in valid:
+                with self.subTest(core=core.__name__, text=text):
+                    expected = core._HTMLCollector("index.html")
+                    expected.feed(text)
+                    expected.close_checked()
+                    parser = core._HTMLCollector("index.html")
+                    for character in text:
+                        parser.feed(character)
+                    parser.close_checked()
+                    self.assertEqual(parser.events, expected.events)
+            for text in invalid:
+                with self.subTest(core=core.__name__, text=text):
+                    errors = []
+                    for chunks in ([text], list(text)):
+                        parser = core._HTMLCollector("index.html")
+                        with self.assertRaises(core.AdmissionError) as raised:
+                            for chunk in chunks:
+                                parser.feed(chunk)
+                            parser.close_checked()
+                        errors.append(raised.exception.as_dict())
+                    self.assertEqual(errors[0], errors[1])
+                    self.assertIn(errors[0]["code"], ("bad-end-tag", "bad-html-comment"))
+
     def test_lexical_exclusion_has_a_stable_location_and_admission_witness(self):
         left = self.bundle(document())
         text = '<!doctype html>\n<html><head><title>Library</title></head><body>\n<p>Notes</p title="draft">\n</body></html>'

@@ -53,11 +53,11 @@ drivers refuse nonempty output directories; they do not delete prior fixtures.
 To compare individual stages, place the actual `unit-summary.json` beside the
 evaluation outputs, then run `verify_results.py` against that directory and
 `results/`, with
-`--expected-unit evidence/lexical-admission-20261012/after-unit/unit-summary.json`
-for the current 96-method test domain. The final comparator checks **ten named result files** and
+`--expected-unit evidence/parser-streaming/unit-summary.json`
+for the current 97-method test domain. The comparator checks **ten named result files** and
 reports `compared: 10`, `matched: true`, and no mismatches on success, explicitly
 recording that unit-receipt override. Without it, the archived 84-test count
-correctly differs from the current 96-test run; that archived result is unchanged.
+correctly differs from the current 97-test run; that archived result is unchanged.
 Five files are byte-exact. Five JSON comparisons remove only documented
 wall/CPU/RSS/swap telemetry fields; all scientific fields, worker counts,
 decisions, counts and lengths remain exact. New measurements must be finite,
@@ -195,14 +195,16 @@ for the same certificate. Asset sizes and canonical bytes are exact byte counts.
 
 ## Closing-token checks and supplied-fixture cost
 
-`tests/test_html_lexical_admission.py` adds nine ordinary lexical/name-scope
-methods. The current full suites pass **96 unit/boundary methods and 17
-supplemental methods**, with actual receipts in
-`evidence/lexical-admission-20261012/after-unit/` and `after-supplemental/`.
+`tests/test_html_lexical_admission.py` contains ten lexical/name-scope methods,
+including complete tags and comments delivered one character at a time.
+EOF processing consumes buffered feed fragments before checking for incomplete
+markup. On Windows Python 3.12.14 the full suites pass **97 unit/boundary
+methods and 17 supplemental methods**. The measured unit receipt is
+`evidence/parser-streaming/unit-summary.json`; the supplemental domain is unchanged.
 Seven finite outputs match retained observations in that directory's
 `finite/comparison.json`; Linux stress telemetry and the ten-file driver were
 not rerun on Windows. Historical 84/87-method and six-method receipts are not
-replaced. The reproduction driver uses the measured 96-method expected receipt.
+replaced. The reproduction driver uses the measured 97-method expected receipt.
 
 For the bounded admission-cost comparison:
 
