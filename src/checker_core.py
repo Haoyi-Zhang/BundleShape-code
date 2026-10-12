@@ -23,6 +23,7 @@ from . import limits
 
 NAME_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_-]{0,79}$")
 TAG_RE = re.compile(r"^[a-z][a-z0-9-]*$")
+END_TAG_RE = re.compile(r"</([A-Za-z][A-Za-z0-9-]*)[ \t\n\r\f]*>")
 PROP_RE = re.compile(r"^[a-z][a-z0-9-]*$")
 SELECTOR_TOKEN_RE = re.compile(r"([.#][A-Za-z_][A-Za-z0-9_-]*|\*|[A-Za-z][A-Za-z0-9-]*|>|\+|~|\s+)")
 
@@ -274,6 +275,21 @@ class _HTMLCollector(HTMLParser):
     def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         self._record_start(tag, attrs, True)
 
+    def parse_endtag(self, i: int) -> int:
+        # HTMLParser's tolerant tokenizer discards end-tag tail attributes
+        # before handle_endtag. Validate the complete raw token instead; the
+        # declared IWB language has no end-tag metadata or recovery syntax.
+        end = self.rawdata.find(">", i + 2)
+        if end < 0:
+            return -1  # Buffer a split token until feed() or close_checked().
+        match = END_TAG_RE.fullmatch(self.rawdata, i, end + 1)
+        if match is None:
+            raise AdmissionError("bad-end-tag", self._loc(),
+                                 "expected </name> with optional trailing ASCII whitespace")
+        self.handle_endtag(match.group(1).lower())
+        self.clear_cdata_mode()
+        return end + 1
+
     def handle_endtag(self, tag: str) -> None:
         self._flush_text()
         tag = tag.lower()
@@ -304,6 +320,8 @@ class _HTMLCollector(HTMLParser):
     def close_checked(self) -> None:
         if self.rawdata.startswith("<!--"):
             raise AdmissionError("bad-html-comment", self._loc(), "unterminated comment")
+        if self.rawdata.startswith("</"):
+            raise AdmissionError("bad-end-tag", self._loc(), "unterminated closing tag")
         super().close()
         self._flush_text()
         if self.stack:

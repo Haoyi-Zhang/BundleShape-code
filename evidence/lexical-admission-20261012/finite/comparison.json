@@ -1,0 +1,16 @@
+{
+  "combination_pairs": 512,
+  "combination_pass": true,
+  "compared": 7,
+  "coupling_decision": "different",
+  "coupling_replay_accepted": true,
+  "incorrectly_accepted_mutations": 0,
+  "matched": true,
+  "mismatches": [],
+  "mutations": 360,
+  "oracle_disagreements": 0,
+  "oracle_pairs": 5120,
+  "stress_telemetry": "not run: Windows lacks POSIX resource",
+  "variant_correct": 480,
+  "variant_pairs": 480
+}

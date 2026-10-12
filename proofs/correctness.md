@@ -19,6 +19,10 @@ the restricted scanner, which may join lexemes; the relation is not standard CSS
 token-stream or browser equivalence. Local transformations mean equality under
 these precisely declared normalizations, not unrestricted insertion inside any
 HTML lexical construct.
+Raw closing tokens have only a name and optional trailing ASCII whitespace;
+attributes and malformed tails fail admission before event extraction. The
+name-only end event therefore loses no admitted metadata. This is a lexical
+domain condition, not an additional erasure in the relation.
 The source-to-record quotient also decodes HTML character references in text and
 attributes, lowercases HTML tags/attribute names and CSS type-selector/property
 names, resolves local URL spellings, and replaces each whole canonical CSS URL
@@ -266,10 +270,11 @@ exercise concrete programs and finite cases:
 - an exhaustive orbit comparison over 5,120 ordered tiny pairs and 18,176 tried
   candidate bijections;
 - 360 mutation attempts on 72 base certificate instances (24 per decision, five each);
-- 84 unit/boundary tests in the retained observation; 87 in the current source
-  domain, plus six retained supplemental regressions; the current supplemental
-  source also includes six target-identity regressions, outside those archived
-  receipts and without changing the quantified relation;
+- 84 unit/boundary tests in the retained observation; an earlier receipt covers
+  87. The current domain has 96, including nine ordinary closing-token and
+  name-scope methods, plus 17 supplemental methods (six retained, six target
+  identities and five observed-metric methods). These counts do not change the
+  quantified relation;
 - one global-coupling negative control;
 - one bounded stress pair.
 

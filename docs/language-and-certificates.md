@@ -56,6 +56,19 @@ one `<!doctype html>`. There is exactly one `html`, `head`, and `body`. The dire
 children of `html` are exactly `head` followed by `body`. Non-void elements must
 be explicitly closed and cannot use XML-style self-closing syntax.
 
+Closing-token admission validates the raw markup before the end-event callback:
+`end-tag = "</" name W* ">"`, where `name` matches
+`[A-Za-z][A-Za-z0-9-]*` and `W` is ASCII space, tab, LF, CR or form feed. The
+case-folded name must close the current admitted non-void element. Tail
+attributes (including otherwise eligible start-tag attributes), extra slashes,
+whitespace between `</` and the name, non-ASCII trailing whitespace and
+incomplete closures are rejected as `bad-end-tag`. A well-spelled but unmatched
+name retains `unbalanced-html`; a closing void tag retains `void-end-tag`.
+The standard-library callback exposes only a name, so callback validation alone
+cannot enforce this boundary. No end-tag metadata erasure belongs to the lexical
+quotient. Token-shaped data in comments, quoted attributes or decoded character
+references is not reinterpreted as markup.
+
 Admitted tags are:
 
 ```text

@@ -1,0 +1,256 @@
+{
+  "examples": {
+    "css-comment": {
+      "checker_accepted": true,
+      "compact_wire_bytes_with_newline": 312,
+      "decision": "equivalent"
+    },
+    "css-space": {
+      "checker_accepted": true,
+      "compact_wire_bytes_with_newline": 293,
+      "decision": "different",
+      "witness": {
+        "left": 32,
+        "left_length": 528,
+        "offset": 460,
+        "right": 46,
+        "right_length": 524
+      }
+    },
+    "html-comment": {
+      "checker_accepted": true,
+      "compact_wire_bytes_with_newline": 288,
+      "decision": "equivalent"
+    },
+    "two-2MiB-assets": {
+      "checker_accepted": true,
+      "compact_wire_bytes_with_newline": 302,
+      "decision": "different",
+      "exact_asset_roundtrips": [
+        true,
+        true
+      ],
+      "witness": {
+        "left": 87,
+        "left_length": 2796705,
+        "offset": 440,
+        "right": 109,
+        "right_length": 2796705
+      }
+    },
+    "unicode-separator": {
+      "checker_accepted": true,
+      "compact_wire_bytes_with_newline": 295,
+      "decision": "different",
+      "witness": {
+        "left": 194,
+        "left_length": 356,
+        "offset": 269,
+        "right": 226,
+        "right_length": 357
+      }
+    }
+  },
+  "outcomes": [
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_absent_root_is_environment_failure"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_byte_witness_is_total_including_eof"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_cli_environment_failure_emits_no_certificate"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_cli_exclusive_output_and_valid_self_check"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_cli_self_check_happens_before_output"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_css_actual_space_still_is_descendant_combinator"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_css_comment_compound_selector_has_no_added_space"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_css_counter_never_rescans_completed_rules"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_css_declaration_budget_is_bundle_wide"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_css_erasure_is_explicitly_prelexical"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_css_quoted_comment_is_data_and_unclosed_comment_rejects"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_css_rule_budget_is_bundle_wide"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_directory_first_error_independent_of_creation_order"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_directory_io_failure_is_environment_failure"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_disappearing_entry_is_environment_failure"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_gap_longhands_order_is_permitted"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_gap_shorthand_rejected_both_orders"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_html_comment_blank_run_and_nfc"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_html_comment_markers_in_attribute_remain_literal"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_html_comment_preserves_internal_whitespace"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_html_comment_text_run_coalesces"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_html_event_budget_is_bundle_wide"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_html_tags_still_break_text_runs"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_html_unclosed_comment_rejected"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_missing_listed_file_is_structural"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_missing_manifest_observed_by_inventory_is_structural"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_mutation_sampling_unit_is_72_bases_360_attempts"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_negative_witness_fields_and_types_are_strict"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_normal_paths_and_relative_url_resolution"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_observed_same_size_change_is_environment_failure"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_permission_failure_never_certifies_language_exclusion"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_raw_manifest_paths_rejected_before_normalization"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_resource_error_order_independent_of_manifest_order"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_stress_count_means_16_content_plus_one_root_html"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_two_2mib_assets_have_small_exact_witness"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_unexpected_parser_failure_not_converted_to_admission"
+    },
+    {
+      "outcome": "pass",
+      "test": "test_repairs.RepairTests.test_unicode_line_separators_get_checkable_mismatches"
+    }
+  ],
+  "passed": true,
+  "same_source_core": {
+    "common_top_level_definitions": 35,
+    "different_definitions": [],
+    "incoming_corresponding_identical_lines": 933,
+    "independent_implementation_claimed": false,
+    "shared_definition_names": [
+      "AdmissionError",
+      "CssRule",
+      "EnvironmentFailure",
+      "HtmlEvent",
+      "ParsedBundle",
+      "_HTMLCollector",
+      "_attr_references",
+      "_canon_css",
+      "_canon_html",
+      "_canon_ref",
+      "_canon_selector",
+      "_collect_names",
+      "_css_refs",
+      "_css_url_occurrences",
+      "_directory_entries",
+      "_discover",
+      "_inventory",
+      "_is_escaped",
+      "_nfc",
+      "_normalize_css_value",
+      "_parse_css",
+      "_read_stable",
+      "_regular_stat",
+      "_resolve_ref",
+      "_rewrite_css_urls",
+      "_safe_manifest_path",
+      "_selector_tokens",
+      "_split_outside",
+      "_stat_signature",
+      "_strict_json_loads",
+      "_strip_css_comments",
+      "_valid_name",
+      "canonical_digest",
+      "first_mismatch",
+      "parse_bundle"
+    ]
+  },
+  "scope": "owned finite regression subset and read-only lineage/absence checks; no independent parser or natural-source experiment",
+  "targeted_test_methods": 37,
+  "unavailable_study": {
+    "natural_results_claimed": false,
+    "retained_selection_bytes": 20,
+    "retained_selection_data_rows": 0,
+    "study_script_exists": false
+  }
+}

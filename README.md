@@ -52,11 +52,12 @@ child log, command, exit code, timeout flag and elapsed time. Generators and res
 drivers refuse nonempty output directories; they do not delete prior fixtures.
 To compare individual stages, place the actual `unit-summary.json` beside the
 evaluation outputs, then run `verify_results.py` against that directory and
-`results/`, with `--expected-unit evidence/current-unit-summary.json` for the
-current test domain. The final comparator checks **ten named result files** and
+`results/`, with
+`--expected-unit evidence/lexical-admission-20261012/after-unit/unit-summary.json`
+for the current 96-method test domain. The final comparator checks **ten named result files** and
 reports `compared: 10`, `matched: true`, and no mismatches on success, explicitly
 recording that unit-receipt override. Without it, the archived 84-test count
-correctly differs from the current 87-test run; that archived result is unchanged.
+correctly differs from the current 96-test run; that archived result is unchanged.
 Five files are byte-exact. Five JSON comparisons remove only documented
 wall/CPU/RSS/swap telemetry fields; all scientific fields, worker counts,
 decisions, counts and lengths remain exact. New measurements must be finite,
@@ -127,6 +128,13 @@ event, normalize newline/NFC, then remove a wholly blank run. Thus `ab` and
 separate runs; quoted attribute content remains literal; malformed comments fail.
 Insertion inside markup or character references is not promised invariant.
 
+Raw closing tokens are checked before the name-only end-event callback. The form
+is `</name>` with optional trailing ASCII space/tab/LF/CR/form feed; names are
+case-folded. Tail attributes, extra slashes and incomplete closures are rejected,
+not erased into equivalent records. Multi-class elements remain admitted when
+their ordered introductions add at most one unseen class. IDs remain unique
+across the whole bundle, and fragments remain tied to their owning document.
+
 CSS uses zero-width **prelexical** comment erasure outside strings.
 `body/**c**/.x` equals `body.x`; `body /*c*/.x` retains a descendant separator.
 This convention can join lexemes, and is not CSS-standard token preservation or
@@ -160,7 +168,7 @@ prefixes, and two unequal 2-MiB assets without an oversized certificate.
   **five mutations per instance**, hence 120 attempts per class and **360 total**;
   zero corrupted certificates accepted. This is not 360 independent originals.
 * The retained receipt records **84 unit/boundary tests**, comprising 47 inherited
-  tests and 37 targeted regressions/read-only count checks. The source now has
+  tests and 37 targeted regressions/read-only count checks. An earlier source domain had
   **87 methods**, including three additional URI-component tests, and a separate
   **six-method retained supplemental suite**. The cited Windows receipts pass
   both without skips; the additional six target-identity methods described above
@@ -184,6 +192,33 @@ The retained campaign's `certificate_bytes` field counts compact sorted-key ASCI
 JSON **without** a trailing newline. CLI wire-size receipts and the negative
 certificate size bound include that newline; the two measures differ by one byte
 for the same certificate. Asset sizes and canonical bytes are exact byte counts.
+
+## Closing-token checks and supplied-fixture cost
+
+`tests/test_html_lexical_admission.py` adds nine ordinary lexical/name-scope
+methods. The current full suites pass **96 unit/boundary methods and 17
+supplemental methods**, with actual receipts in
+`evidence/lexical-admission-20261012/after-unit/` and `after-supplemental/`.
+Seven finite outputs match retained observations in that directory's
+`finite/comparison.json`; Linux stress telemetry and the ten-file driver were
+not rerun on Windows. Historical 84/87-method and six-method receipts are not
+replaced. The reproduction driver uses the measured 96-method expected receipt.
+
+For the bounded admission-cost comparison:
+
+```sh
+python -B admission_cost.py --output admission-cost.json
+```
+
+The 24 **generated** supplied bases contain 48 HTML files, 96 resources and
+37,044 bytes including manifests. Five repeats alternate strict and
+standard-library closing-token methods, running full `parse_bundle` admission
+and canonical construction in both cores. All 24 bases are admitted by each
+core; 480 canonical objects agree. The receipt
+`evidence/lexical-admission-20261012/owned-admission-cost-cli.json` records
+aggregate wall medians of 0.205/0.206 seconds on Windows Python 3.12.14.
+Only the closing-token method differs; this is not an old-full-parser
+comparison, speedup claim, natural admission rate or detector benchmark.
 
 ## Unavailable natural-source study
 

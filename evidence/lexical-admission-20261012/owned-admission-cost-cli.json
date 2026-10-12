@@ -1,0 +1,55 @@
+{
+  "admitted_by_each_core": 24,
+  "bundles": 24,
+  "canonical_agreements": 480,
+  "comparison": "only the closing-token method is switched to HTMLParser.parse_endtag; no old full-parser claim",
+  "cores_per_repeat": 2,
+  "html_files": 48,
+  "input_bytes_including_manifests": 37044,
+  "input_kind": "24 supplied generated owned bases; no natural-source inputs",
+  "operation": "full parse_bundle admission and canonical construction for each base and each core",
+  "order": "alternating mode order; same process; warm local filesystem; no CPU affinity",
+  "platform": "Windows",
+  "python": "3.12.14",
+  "repeats_per_mode": 5,
+  "resources": 96,
+  "samples": {
+    "standard_library_closing_tokens": {
+      "cpu_seconds": [
+        0.203125,
+        0.21875,
+        0.203125,
+        0.203125,
+        0.21875
+      ],
+      "median_cpu_seconds": 0.203125,
+      "median_wall_seconds": 0.20582640008069575,
+      "wall_seconds": [
+        0.20751039998140186,
+        0.21358079998753965,
+        0.20582640008069575,
+        0.20523259998299181,
+        0.2052333999890834
+      ]
+    },
+    "strict_closing_tokens": {
+      "cpu_seconds": [
+        0.203125,
+        0.203125,
+        0.1875,
+        0.203125,
+        0.1875
+      ],
+      "median_cpu_seconds": 0.203125,
+      "median_wall_seconds": 0.20495949999894947,
+      "wall_seconds": [
+        0.20589470001868904,
+        0.20015110005624592,
+        0.19592989992816,
+        0.2106902999803424,
+        0.20495949999894947
+      ]
+    }
+  },
+  "scope": "no browser, natural coverage, scaling, peak memory or comparative detector effectiveness inference"
+}
