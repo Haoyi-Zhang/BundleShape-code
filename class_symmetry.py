@@ -82,8 +82,8 @@ def main():
                  python=sys.version,platform=platform.platform(),
                  source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                  scope='Literal finite graph and abstract-record enumeration only; not production A3 admission, parser/native browser effectiveness, proof or novelty certification')
-    (OUT/'pairs.jsonl').write_text(''.join(json.dumps(row,sort_keys=True)+'\n' for row in rows),encoding='utf-8')
-    (OUT/'summary.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')
+    (OUT/'pairs.jsonl').write_text(''.join(json.dumps(row,sort_keys=True)+'\n' for row in rows),encoding='utf-8',newline='\n')
+    (OUT/'summary.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps(summary,indent=2))
     if mismatches:raise RuntimeError('encoding mismatch')
 

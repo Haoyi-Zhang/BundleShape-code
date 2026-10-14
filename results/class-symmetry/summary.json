@@ -7,9 +7,9 @@
   "mismatches": 0,
   "maximum_original_vertices": 4,
   "maximum_encoded_classes": 5,
-  "wall_seconds": 0.4611614999885205,
+  "wall_seconds": 0.4363602999947034,
   "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
   "platform": "Windows-11-10.0.28000-SP0",
-  "source_sha256": "b27851c984269823507ce678e5824d8385733f4d764bfef717921fab9e6035db",
+  "source_sha256": "8c47b69bf29a8fc3e4089554da79784e56c88b995fcbbe3388ef6c04794f1c54",
   "scope": "Literal finite graph and abstract-record enumeration only; not production A3 admission, parser/native browser effectiveness, proof or novelty certification"
 }
