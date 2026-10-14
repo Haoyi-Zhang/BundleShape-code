@@ -1,0 +1,14 @@
+RUN generate_fixtures.py
+EXIT 0 TIMEOUT False
+RUN test.py
+EXIT 0 TIMEOUT False
+RUN evaluate.py
+EXIT 0 TIMEOUT False
+RUN static_assurance.py
+EXIT 0 TIMEOUT False
+RUN repair_acceptance.py
+EXIT 0 TIMEOUT False
+RUN test.py
+EXIT 0 TIMEOUT False
+RUN verify_results.py
+EXIT 0 TIMEOUT False

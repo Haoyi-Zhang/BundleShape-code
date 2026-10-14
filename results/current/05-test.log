@@ -1,0 +1,12 @@
+test_empty_directory_is_usable_but_not_reusable (test_scientific_repairs.ScientificRepairs.test_empty_directory_is_usable_but_not_reusable) ... ok
+test_generators_refuse_nonempty_destinations (test_scientific_repairs.ScientificRepairs.test_generators_refuse_nonempty_destinations) ... ok
+test_metadata_timestamps_are_compared_within_each_api (test_scientific_repairs.ScientificRepairs.test_metadata_timestamps_are_compared_within_each_api) ... ok
+test_output_directory_refuses_file_and_nonempty_directory (test_scientific_repairs.ScientificRepairs.test_output_directory_refuses_file_and_nonempty_directory) ... ok
+test_path_sorted_counterexample_is_admitted (test_scientific_repairs.ScientificRepairs.test_path_sorted_counterexample_is_admitted) ... ok
+test_result_file_is_exclusive (test_scientific_repairs.ScientificRepairs.test_result_file_is_exclusive) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.009s
+
+OK
+{"errors": 0, "failures": 0, "skipped": 0, "successful": true, "tests_run": 6, "wall_seconds": 0.04852}

@@ -1,0 +1,6 @@
+.....................................
+----------------------------------------------------------------------
+Ran 37 tests in 0.442s
+
+OK
+{"common_core_definitions": 35, "negative_asset_wire_bytes": 302, "passed": true, "targeted_test_methods": 37}
