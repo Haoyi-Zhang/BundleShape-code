@@ -19,6 +19,12 @@ the restricted scanner, which may join lexemes; the relation is not standard CSS
 token-stream or browser equivalence. Local transformations mean equality under
 these precisely declared normalizations, not unrestricted insertion inside any
 HTML lexical construct.
+Raw opening tokens require ASCII-space-separated attributes with explicit
+quoted or nonempty lexically bounded unquoted values. Stray delimiter slashes
+and missing separators fail before the tolerant callback can erase them. A
+slash in an unquoted value remains literal; the check adds no new erasure to
+the source-to-record quotient. This lexical domain condition leaves the
+anchoring and canonical-form arguments below unchanged.
 Raw closing tokens have only a name and optional trailing ASCII whitespace;
 attributes and malformed tails fail admission before event extraction. The
 name-only end event therefore loses no admitted metadata. This is a lexical
@@ -270,11 +276,11 @@ exercise concrete programs and finite cases:
 - an exhaustive orbit comparison over 5,120 ordered tiny pairs and 18,176 tried
   candidate bijections;
 - 360 mutation attempts on 72 base certificate instances (24 per decision, five each);
-- 84 unit/boundary tests in the retained observation; an earlier receipt covers
-  87. The current domain has 97, including ten closing-token and
-  name-scope methods with buffered-feed EOF coverage, plus 17 supplemental methods (six retained, six target
-  identities and five observed-metric methods). These counts do not change the
-  quantified relation;
+- 108 current unit/boundary methods, including opening/closing lexical and
+  case-insensitive root-kind checks, plus 22 supplemental methods for relation
+  replay, measured-result enforcement and optimization-independent scientific
+  gates. These are implementation observations distinct from the quantified
+  relation;
 - one global-coupling negative control;
 - one bounded stress pair.
 
@@ -287,3 +293,11 @@ records, not complete abstract parser objects; tiny parse-shape checks inspect
 only resource keys, root and name orders. No finite campaign proves this
 written argument, and no written argument proves the Python implementation
 free from defects.
+
+The separate start-token receipt runs 105 unit/boundary methods (the preceding
+97 plus eight opening-token methods). Eleven owned publication-workflow controls
+exercise the public proposal/replay commands: two equivalent, two different,
+six structurally excluded and one unavailable endpoint. The ten certificates
+replay successfully; the environmental control emits none. These controls give
+an executable four-outcome integration example, not a new oracle domain,
+browser validation, field admission estimate or performance measurement.

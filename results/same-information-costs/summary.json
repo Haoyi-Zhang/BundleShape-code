@@ -1,0 +1,13 @@
+{
+  "cases": 408,
+  "certificate_slower_pairs": 1223,
+  "certificate_total_cpu_seconds": 21.9375,
+  "decision_disagreements": 0,
+  "direct_total_cpu_seconds": 10.9375,
+  "median_certificate_direct_wall_ratio": 2.06409191893084,
+  "median_certificate_wall_seconds": 0.01771034998819232,
+  "median_direct_wall_seconds": 0.008613850004621781,
+  "paired_measurements": 1224,
+  "repeats": 3,
+  "scope": "same normalized input and exact Boolean relation; direct method shares checker parsing/canonicalization and emits no correspondence certificate; warm same-process full filesystem reads, proposal/wire JSON/replay/answer serialization; input generation and process startup excluded; not an independent parser, deployment, power-loss or population study"
+}

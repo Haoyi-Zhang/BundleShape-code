@@ -5,7 +5,10 @@ import argparse
 import json
 import os
 from pathlib import Path
-import resource
+try:
+    import resource
+except ImportError:
+    resource = None
 import subprocess
 import sys
 import time
@@ -16,6 +19,8 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", type=Path, default=Path("reproduced"))
     args = parser.parse_args()
+    if resource is None:
+        parser.error('the full measured campaign requires Linux/POSIX resource limits; no substitute RSS or limits are recorded')
     root = Path(__file__).resolve().parent
     out = args.out.resolve()
     if any(out == protected or protected in out.parents
@@ -36,7 +41,7 @@ def main() -> int:
         ["repair_acceptance.py", "--out", str(out / "repairs")],
         ["test.py", "--suite", "regressions", "--out", str(out / "supplemental")],
         ["verify_results.py", "--actual", str(out / "evaluation"), "--expected", str(root/"results"),
-         "--expected-unit", str(root / "evidence" / "parser-streaming" / "unit-summary.json")],
+         "--expected-unit", str(root / "evidence" / "start-token-workflow" / "unit-summary.json")],
     ]
     receipts = []
     for index, command in enumerate(commands):
@@ -46,7 +51,8 @@ def main() -> int:
                 handle.write((out / "unit" / "unit-summary.json").read_bytes())
         print("RUN", command[0], flush=True)
         started = time.perf_counter()
-        argv = [sys.executable, "-B", str(root / command[0]), *command[1:]]
+        argv = [sys.executable, *(["-O"] * sys.flags.optimize), "-B",
+                str(root / command[0]), *command[1:]]
         try:
             with (out / f"{index:02d}-{Path(command[0]).stem}.log").open("xb") as log:
                 completed = subprocess.run(argv, env=env, cwd=root, stdout=log,

@@ -24,6 +24,8 @@ from . import limits
 NAME_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_-]{0,79}$")
 TAG_RE = re.compile(r"^[a-z][a-z0-9-]*$")
 END_TAG_RE = re.compile(r"</([A-Za-z][A-Za-z0-9-]*)[ \t\n\r\f]*>")
+START_NAME_RE = re.compile(r"[A-Za-z][A-Za-z0-9-]*")
+HTML_SPACE = " \t\n\r\f"
 PROP_RE = re.compile(r"^[a-z][a-z0-9-]*$")
 SELECTOR_TOKEN_RE = re.compile(r"([.#][A-Za-z_][A-Za-z0-9_-]*|\*|[A-Za-z][A-Za-z0-9-]*|>|\+|~|\s+)")
 
@@ -226,6 +228,7 @@ class _HTMLCollector(HTMLParser):
         return f"{self.path}:{line}:{col + 1}"
 
     def _record_start(self, tag: str, attrs: list[tuple[str, str | None]], self_closing: bool) -> None:
+        self._check_start_token()
         self._flush_text()
         tag = tag.lower()
         if tag in limits.FORBIDDEN_TAGS or tag not in limits.ALLOWED_TAGS:
@@ -260,6 +263,55 @@ class _HTMLCollector(HTMLParser):
         self.events.append(HtmlEvent("start", (tag, tuple(normalized), self_closing or tag in limits.VOID_TAGS), line, col + 1))
         if not (self_closing or tag in limits.VOID_TAGS):
             self.stack.append(tag)
+
+    def _check_start_token(self) -> None:
+        # HTMLParser tolerates stray slashes and adjacent quoted attributes.
+        # Check the original token before those source distinctions disappear.
+        # This is the IWB lexical gate, not a browser-conformance validator.
+        raw = self.get_starttag_text() or ""
+        name = START_NAME_RE.match(raw, 1) if raw.startswith("<") else None
+        if name is None:
+            raise AdmissionError("bad-start-tag", self._loc(), "invalid opening name")
+        i = name.end()
+        while i < len(raw):
+            before_space = i
+            while i < len(raw) and raw[i] in HTML_SPACE:
+                i += 1
+            if ((i == len(raw) - 1 and raw[i] == ">")
+                    or (i == len(raw) - 2 and raw.startswith("/>", i))):
+                return
+            if i == before_space:
+                break  # Every attribute must have an ASCII-space separator.
+            attribute = START_NAME_RE.match(raw, i)
+            if attribute is None:
+                break
+            i = attribute.end()
+            after_name = i
+            while i < len(raw) and raw[i] in HTML_SPACE:
+                i += 1
+            if i >= len(raw) or raw[i] != "=":
+                # Retain the existing valueless-attribute semantic error.
+                i = after_name
+                continue
+            i += 1
+            while i < len(raw) and raw[i] in HTML_SPACE:
+                i += 1
+            if i >= len(raw):
+                break
+            if raw[i] in {"'", '"'}:
+                end = raw.find(raw[i], i + 1)
+                if end < 0:
+                    break
+                i = end + 1
+            else:
+                start = i
+                while i < len(raw) and raw[i] not in HTML_SPACE + "\"'=<>\x60":
+                    i += 1
+                if i == start:
+                    break  # Empty unquoted values are not admitted.
+                # A slash in an unquoted value is data, not a closing marker.
+        raise AdmissionError("bad-start-tag", self._loc(),
+                             "expected spaced attributes with quoted or nonempty unquoted values")
 
     def handle_decl(self, decl: str) -> None:
         self._flush_text()
@@ -327,6 +379,8 @@ class _HTMLCollector(HTMLParser):
                 raise AdmissionError("bad-html-comment", self._loc(), "unterminated comment")
             if self.rawdata.startswith("</"):
                 raise AdmissionError("bad-end-tag", self._loc(), "unterminated closing tag")
+            if re.match(r"<[A-Za-z]", self.rawdata):
+                raise AdmissionError("bad-start-tag", self._loc(), "unterminated opening tag")
         super().goahead(end)
 
     def close_checked(self) -> None:
@@ -966,7 +1020,7 @@ def parse_bundle(root_dir: str | Path) -> ParsedBundle:
                 resources[rel] = {"kind": "css", "rules": rules, "refs": refs, "bytes": data}
         else:
             resources[rel] = {"kind": "asset", "refs": [], "bytes": data}
-    if not root.endswith(".html"):
+    if resources[root]["kind"] != "html":
         raise AdmissionError("bad-root-type", "bundle.json:root", root)
     # IDs are intentionally bundle-global in this restricted model.  Record
     # their owning document so fragment references cannot silently point into a

@@ -93,7 +93,8 @@ def main() -> int:
         if name == "unit-summary.json" and args.expected_unit is not None:
             e = args.expected_unit
         if (not a.exists() or not e.exists() or not telemetry_valid(load(a))
-                or normalized(name, load(a)) != normalized(name, load(e))):
+                or json.dumps(normalized(name, load(a)), sort_keys=True, allow_nan=False)
+                   != json.dumps(normalized(name, load(e)), sort_keys=True, allow_nan=False)):
             mismatches.append(name)
     result = {"matched": not mismatches, "mismatches": mismatches, "compared": len(EXACT) + 5}
     if args.expected_unit is not None:

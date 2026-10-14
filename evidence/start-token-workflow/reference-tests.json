@@ -1,0 +1,36 @@
+{
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "executable": "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.28000-SP0",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "errors": [],
+  "failures": [],
+  "format": "iwb-selected-tests-1",
+  "raw_output": "test_ordinary_path_and_named_fragment_are_preserved (tests.test_reference_components.ReferenceComponentTests.test_ordinary_path_and_named_fragment_are_preserved) ... ok\ntest_present_empty_fragment_is_rejected (tests.test_reference_components.ReferenceComponentTests.test_present_empty_fragment_is_rejected) ... ok\ntest_present_empty_query_is_rejected (tests.test_reference_components.ReferenceComponentTests.test_present_empty_query_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n",
+  "runner_sha256": "ddb538f9301568d5b804647894d1cc4b4b430f3b86dd628ca5b099988b67d14e",
+  "skipped": [],
+  "source_sha256": {
+    "certify.py": "fef58b8f19ca2fc4abb8e6c0c5f407ed51fb1408651de5f57157095a8a426614",
+    "evaluate.py": "889d0495e3dd14dbae1c4e013539cc9e11bf7f77a096fba738994ed6d0287bc5",
+    "src/__init__.py": "bbf33780cb7dbc40ae49e4ac3beed5ba49e9f63df9b0a96645be5d43cc84dc31",
+    "src/baselines.py": "bf1f8340880e0566d29edb3ef5418f0b43675ca616ed546042d7d9928a78f149",
+    "src/checker_core.py": "8f6ab17bc98ab19ca50c13ae1a8cfec3e6511ca42251874138cae9c86cfdf3f7",
+    "src/exact_oracle.py": "a06b3a3a3bdcac081bf649f7b4a980262450b58a4a81097bbe2bff61be3c4aa5",
+    "src/fixture_factory.py": "cb817e7b6a178acfc91dea9155fb5dc409ecdd300c25432ee7b7221a8996bdf3",
+    "src/limits.py": "a66fe94731c8bcc6d8d025d552be35664f5969a7c57c818c3440ca95680df9d6",
+    "src/output_paths.py": "bc3fa38926a7527941941be7009896ca956b453b5c77b8414a17311e6f38b3f3",
+    "src/producer_core.py": "c84afa0d6e75f9112190103c3ba63f3389edaf869aafeb70f7604c246330cd91",
+    "src/stress_factory.py": "2c7837173f5073b5ad9ee57242e8e76abd05cd946a7c718f36e715f0fb5b2994",
+    "src/tiny_fixtures.py": "893e0f1d66506a478e8b2af1dd66e7e3a15a3340e2dbd0b44ebd20ba5d047414",
+    "tests/test_reference_components.py": "588b3e40f26bb3edcfdf6dac165640f0346f22b329c9bbabf806ba9cbf9d599d"
+  },
+  "success": true,
+  "tests": [
+    "tests.test_reference_components.ReferenceComponentTests.test_ordinary_path_and_named_fragment_are_preserved",
+    "tests.test_reference_components.ReferenceComponentTests.test_present_empty_fragment_is_rejected",
+    "tests.test_reference_components.ReferenceComponentTests.test_present_empty_query_is_rejected"
+  ],
+  "tests_run": 3
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_certificates": 10,
+  "controls": 11,
+  "format": "iwb-publication-workflow-1",
+  "matched": 11,
+  "observed_counts": {
+    "different": 2,
+    "environment-error": 1,
+    "equivalent": 2,
+    "out-of-language": 6
+  },
+  "route_counts": {
+    "retry-environment": 1,
+    "review-structural-change": 2,
+    "same-structure": 2,
+    "unsupported-input": 6
+  },
+  "scope": "eleven owned controls; no browser validation, natural-site coverage or timing estimate"
+}

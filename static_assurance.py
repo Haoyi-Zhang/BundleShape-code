@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Deterministic static checks for the shipped producer/checker implementation."""
 from __future__ import annotations
-import argparse, ast, json, py_compile
+import argparse, ast, json
 from pathlib import Path
 from src.output_paths import fresh_directory, write_text_exclusive
 
@@ -24,6 +24,8 @@ def audit_file(path: Path) -> dict:
             imports.extend(alias.name for alias in node.names)
         elif isinstance(node,ast.ImportFrom):
             imports.append(node.module or '')
+            imports.extend(((node.module or '') + '.' + alias.name).lstrip('.')
+                           for alias in node.names)
         elif isinstance(node,ast.Call):
             if isinstance(node.func,ast.Name): calls.append(node.func.id)
             elif isinstance(node.func,ast.Attribute): calls.append(node.func.attr)
@@ -50,12 +52,17 @@ def main() -> int:
     for p in files: compile(p.read_text(encoding="utf-8"), str(p), "exec")
     checker=[r for r in rows if Path(r['path']).name=='checker_core.py']
     producer=[r for r in rows if Path(r['path']).name=='producer_core.py']
-    assert checker and producer, 'producer_core.py and checker_core.py are required'
+    if not checker or not producer:
+        raise ValueError('producer_core.py and checker_core.py are required')
     checker_imports=' '.join(checker[0]['imports']).lower()
-    assert 'producer_core' not in checker_imports and '.producer' not in checker_imports, checker[0]['imports']
-    assert not any(r['network_imports'] for r in rows), rows
-    assert not any(r['forbidden_dynamic_calls'] for r in rows), rows
-    assert not any(r['shell_true_calls'] for r in rows), rows
+    if 'producer_core' in checker_imports or '.producer' in checker_imports:
+        raise ValueError('checker imports producer: ' + repr(checker[0]['imports']))
+    if any(r['network_imports'] for r in rows):
+        raise ValueError('implementation contains network imports')
+    if any(r['forbidden_dynamic_calls'] for r in rows):
+        raise ValueError('implementation contains dynamic evaluation calls')
+    if any(r['shell_true_calls'] for r in rows):
+        raise ValueError('implementation contains shell=True calls')
     result={
         'schema':'iwb-static-assurance',
         'python_files':len(rows),

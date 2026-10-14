@@ -420,7 +420,8 @@ def run_stress(root: Path, out: Path) -> dict[str, Any]:
         verdict = verify_certificate(left, right, cert)
         cpu_samples.append(time.process_time() - c0)
         wall_samples.append(time.perf_counter() - w0)
-    assert cert is not None and verdict is not None
+    if cert is None or verdict is None:
+        raise RuntimeError('stress repetitions produced no certificate and verdict')
     lb = parse_bundle(left); rb = parse_bundle(right)
     usage = resource.getrusage(resource.RUSAGE_SELF)
     total_input = sum(p.stat().st_size for p in left.rglob("*") if p.is_file()) + sum(p.stat().st_size for p in right.rglob("*") if p.is_file())

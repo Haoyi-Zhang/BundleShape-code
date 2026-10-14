@@ -1,0 +1,28 @@
+{
+  "command": [
+    "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+    "-B",
+    "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\publication_workflow.py",
+    "--work",
+    "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures",
+    "--out",
+    "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\results\\publication-workflow"
+  ],
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "executable": "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.28000-SP0",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "format": "iwb-workflow-bindings-1",
+  "source_sha256": {
+    "certify.py": "fef58b8f19ca2fc4abb8e6c0c5f407ed51fb1408651de5f57157095a8a426614",
+    "check.py": "51254ba71d024aae5b5b1a4462501cbe9e9ae333273137cde2691fea46eab6c0",
+    "publication_workflow.py": "cc874030f9cbb53b907c8f1b30537ae22e129aa34cae9c807aefe81a1afb0ba7",
+    "src/__init__.py": "bbf33780cb7dbc40ae49e4ac3beed5ba49e9f63df9b0a96645be5d43cc84dc31",
+    "src/checker_core.py": "8f6ab17bc98ab19ca50c13ae1a8cfec3e6511ca42251874138cae9c86cfdf3f7",
+    "src/limits.py": "a66fe94731c8bcc6d8d025d552be35664f5969a7c57c818c3440ca95680df9d6",
+    "src/output_paths.py": "bc3fa38926a7527941941be7009896ca956b453b5c77b8414a17311e6f38b3f3",
+    "src/producer_core.py": "c84afa0d6e75f9112190103c3ba63f3389edaf869aafeb70f7604c246330cd91"
+  }
+}

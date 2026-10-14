@@ -1,0 +1,678 @@
+[
+  {
+    "certificate": {
+      "class_map": {
+        "page": "layout",
+        "panel": "card"
+      },
+      "decision": "equivalent",
+      "format": "iwb-cert-1",
+      "id_map": {
+        "details": "entry",
+        "intro": "opening"
+      },
+      "left_digest": "f3f36c3917ade16d4eca99d4d09d7a3ec8e0304fbac922b1144e185816e3cfd9",
+      "resource_map": {
+        "child.html": "notes.html",
+        "index.html": "home.html",
+        "style.css": "theme.css"
+      },
+      "right_digest": "f3f36c3917ade16d4eca99d4d09d7a3ec8e0304fbac922b1144e185816e3cfd9"
+    },
+    "expected": "equivalent",
+    "expected_code": null,
+    "input_sha256": {
+      "left": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      },
+      "right": {
+        "bundle.json": "513b5bc15991bca098ad85f8779273c0104be3733f834a324937d17fde2f567d",
+        "home.html": "96725e57e376ac831e277fcc70dda5b83dd26435df96f0a20b3e3147b2636e08",
+        "notes.html": "69aef3197e55a2dfe88a9c1ce9f130a071089db540c933513892697686e8a5cd",
+        "theme.css": "9b90734db82a7343b5b2ef11e8fdd6b8a94b01d2c83d27a5714b91f6bc3e3ff4"
+      }
+    },
+    "matched": true,
+    "name": "anchored-multiclass-rename",
+    "observed": "equivalent",
+    "proposal": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\certify.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\anchored-multiclass-rename"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"class_map\":{\"page\":\"layout\",\"panel\":\"card\"},\"decision\":\"equivalent\",\"format\":\"iwb-cert-1\",\"id_map\":{\"details\":\"entry\",\"intro\":\"opening\"},\"left_digest\":\"f3f36c3917ade16d4eca99d4d09d7a3ec8e0304fbac922b1144e185816e3cfd9\",\"resource_map\":{\"child.html\":\"notes.html\",\"index.html\":\"home.html\",\"style.css\":\"theme.css\"},\"right_digest\":\"f3f36c3917ade16d4eca99d4d09d7a3ec8e0304fbac922b1144e185816e3cfd9\"}\n"
+    },
+    "replay": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\check.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\anchored-multiclass-rename",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\anchored-multiclass-rename.json"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"accepted\": true, \"decision\": \"equivalent\", \"reason\": null}\n"
+    },
+    "route": "same-structure",
+    "verdict": {
+      "accepted": true,
+      "decision": "equivalent",
+      "reason": null
+    }
+  },
+  {
+    "certificate": {
+      "class_map": {
+        "page": "page",
+        "panel": "panel"
+      },
+      "decision": "equivalent",
+      "format": "iwb-cert-1",
+      "id_map": {
+        "details": "details",
+        "intro": "intro"
+      },
+      "left_digest": "f3f36c3917ade16d4eca99d4d09d7a3ec8e0304fbac922b1144e185816e3cfd9",
+      "resource_map": {
+        "child.html": "child.html",
+        "index.html": "index.html",
+        "style.css": "style.css"
+      },
+      "right_digest": "f3f36c3917ade16d4eca99d4d09d7a3ec8e0304fbac922b1144e185816e3cfd9"
+    },
+    "expected": "equivalent",
+    "expected_code": null,
+    "input_sha256": {
+      "left": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      },
+      "right": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "70998b2695e028c2bc6158684e4d1ce6f308f7f0471090409a3b012184587f3c",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      }
+    },
+    "matched": true,
+    "name": "ordinary-unquoted-attributes",
+    "observed": "equivalent",
+    "proposal": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\certify.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\ordinary-unquoted-attributes"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"class_map\":{\"page\":\"page\",\"panel\":\"panel\"},\"decision\":\"equivalent\",\"format\":\"iwb-cert-1\",\"id_map\":{\"details\":\"details\",\"intro\":\"intro\"},\"left_digest\":\"f3f36c3917ade16d4eca99d4d09d7a3ec8e0304fbac922b1144e185816e3cfd9\",\"resource_map\":{\"child.html\":\"child.html\",\"index.html\":\"index.html\",\"style.css\":\"style.css\"},\"right_digest\":\"f3f36c3917ade16d4eca99d4d09d7a3ec8e0304fbac922b1144e185816e3cfd9\"}\n"
+    },
+    "replay": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\check.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\ordinary-unquoted-attributes",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\ordinary-unquoted-attributes.json"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"accepted\": true, \"decision\": \"equivalent\", \"reason\": null}\n"
+    },
+    "route": "same-structure",
+    "verdict": {
+      "accepted": true,
+      "decision": "equivalent",
+      "reason": null
+    }
+  },
+  {
+    "certificate": {
+      "decision": "different",
+      "format": "iwb-cert-1",
+      "left_digest": "f3f36c3917ade16d4eca99d4d09d7a3ec8e0304fbac922b1144e185816e3cfd9",
+      "right_digest": "aff70a69ae9be02542d32ab874700ef1f8f49bfad9451ff36a291f3a79348ac9",
+      "witness": {
+        "left": 97,
+        "left_length": 1346,
+        "offset": 509,
+        "right": 118,
+        "right_length": 1346
+      }
+    },
+    "expected": "different",
+    "expected_code": null,
+    "input_sha256": {
+      "left": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      },
+      "right": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "cc5738aabec9387d4dd9a0f7ce7d56a620657f54dda913d3a2a30d7adbc57f55",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      }
+    },
+    "matched": true,
+    "name": "changed-publication-text",
+    "observed": "different",
+    "proposal": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\certify.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\changed-publication-text"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"decision\":\"different\",\"format\":\"iwb-cert-1\",\"left_digest\":\"f3f36c3917ade16d4eca99d4d09d7a3ec8e0304fbac922b1144e185816e3cfd9\",\"right_digest\":\"aff70a69ae9be02542d32ab874700ef1f8f49bfad9451ff36a291f3a79348ac9\",\"witness\":{\"left\":97,\"left_length\":1346,\"offset\":509,\"right\":118,\"right_length\":1346}}\n"
+    },
+    "replay": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\check.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\changed-publication-text",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\changed-publication-text.json"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"accepted\": true, \"decision\": \"different\", \"reason\": null}\n"
+    },
+    "route": "review-structural-change",
+    "verdict": {
+      "accepted": true,
+      "decision": "different",
+      "reason": null
+    }
+  },
+  {
+    "certificate": {
+      "decision": "different",
+      "format": "iwb-cert-1",
+      "left_digest": "f3f36c3917ade16d4eca99d4d09d7a3ec8e0304fbac922b1144e185816e3cfd9",
+      "right_digest": "ba8e5425cb35bf41580dae76bdf58071a22358c8e279ec900b6ef718be3a4c92",
+      "witness": {
+        "left": 50,
+        "left_length": 1346,
+        "offset": 770,
+        "right": 51,
+        "right_length": 1346
+      }
+    },
+    "expected": "different",
+    "expected_code": null,
+    "input_sha256": {
+      "left": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      },
+      "right": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "9af40f181af884a78b7e0c60243f3720c3cb6b1540cdead976274b0d705c2231"
+      }
+    },
+    "matched": true,
+    "name": "changed-css-longhand",
+    "observed": "different",
+    "proposal": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\certify.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\changed-css-longhand"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"decision\":\"different\",\"format\":\"iwb-cert-1\",\"left_digest\":\"f3f36c3917ade16d4eca99d4d09d7a3ec8e0304fbac922b1144e185816e3cfd9\",\"right_digest\":\"ba8e5425cb35bf41580dae76bdf58071a22358c8e279ec900b6ef718be3a4c92\",\"witness\":{\"left\":50,\"left_length\":1346,\"offset\":770,\"right\":51,\"right_length\":1346}}\n"
+    },
+    "replay": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\check.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\changed-css-longhand",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\changed-css-longhand.json"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"accepted\": true, \"decision\": \"different\", \"reason\": null}\n"
+    },
+    "route": "review-structural-change",
+    "verdict": {
+      "accepted": true,
+      "decision": "different",
+      "reason": null
+    }
+  },
+  {
+    "certificate": {
+      "decision": "out-of-language",
+      "format": "iwb-cert-1",
+      "side": "right",
+      "witness": {
+        "code": "duplicate-id",
+        "detail": "intro",
+        "location": "index.html:1:132"
+      }
+    },
+    "expected": "out-of-language",
+    "expected_code": "duplicate-id",
+    "input_sha256": {
+      "left": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      },
+      "right": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "d79e3edf571fa8c1f688064a641b96ef2374c2e28ddcf791dec8540e61ac8264",
+        "index.html": "448c9506560dc82145324c7ac3a1e24ca74e93564b18395d565c72c31d1aee21",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      }
+    },
+    "matched": true,
+    "name": "document-local-id-reuse",
+    "observed": "out-of-language",
+    "proposal": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\certify.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\document-local-id-reuse"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"decision\":\"out-of-language\",\"format\":\"iwb-cert-1\",\"side\":\"right\",\"witness\":{\"code\":\"duplicate-id\",\"detail\":\"intro\",\"location\":\"index.html:1:132\"}}\n"
+    },
+    "replay": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\check.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\document-local-id-reuse",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\document-local-id-reuse.json"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"accepted\": true, \"decision\": \"out-of-language\", \"reason\": null}\n"
+    },
+    "route": "unsupported-input",
+    "verdict": {
+      "accepted": true,
+      "decision": "out-of-language",
+      "reason": null
+    }
+  },
+  {
+    "certificate": {
+      "decision": "out-of-language",
+      "format": "iwb-cert-1",
+      "side": "right",
+      "witness": {
+        "code": "unanchored-class-set",
+        "detail": "at most one previously unseen class may appear at an ordered element anchor",
+        "location": "index.html:1:113"
+      }
+    },
+    "expected": "out-of-language",
+    "expected_code": "unanchored-class-set",
+    "input_sha256": {
+      "left": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      },
+      "right": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "29b5be351295926b328361e0fdfd558fe677459db13a0ab7a6d3ed5254be03a2",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      }
+    },
+    "matched": true,
+    "name": "simultaneously-new-classes",
+    "observed": "out-of-language",
+    "proposal": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\certify.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\simultaneously-new-classes"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"decision\":\"out-of-language\",\"format\":\"iwb-cert-1\",\"side\":\"right\",\"witness\":{\"code\":\"unanchored-class-set\",\"detail\":\"at most one previously unseen class may appear at an ordered element anchor\",\"location\":\"index.html:1:113\"}}\n"
+    },
+    "replay": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\check.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\simultaneously-new-classes",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\simultaneously-new-classes.json"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"accepted\": true, \"decision\": \"out-of-language\", \"reason\": null}\n"
+    },
+    "route": "unsupported-input",
+    "verdict": {
+      "accepted": true,
+      "decision": "out-of-language",
+      "reason": null
+    }
+  },
+  {
+    "certificate": {
+      "decision": "out-of-language",
+      "format": "iwb-cert-1",
+      "side": "right",
+      "witness": {
+        "code": "bad-start-tag",
+        "detail": "expected spaced attributes with quoted or nonempty unquoted values",
+        "location": "index.html:1:171"
+      }
+    },
+    "expected": "out-of-language",
+    "expected_code": "bad-start-tag",
+    "input_sha256": {
+      "left": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      },
+      "right": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "7e20b40e8f9cd74e7f64898850f83353ef2eebb2111f3d50ed5618196f29d643",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      }
+    },
+    "matched": true,
+    "name": "stray-start-tag-slash",
+    "observed": "out-of-language",
+    "proposal": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\certify.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\stray-start-tag-slash"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"decision\":\"out-of-language\",\"format\":\"iwb-cert-1\",\"side\":\"right\",\"witness\":{\"code\":\"bad-start-tag\",\"detail\":\"expected spaced attributes with quoted or nonempty unquoted values\",\"location\":\"index.html:1:171\"}}\n"
+    },
+    "replay": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\check.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\stray-start-tag-slash",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\stray-start-tag-slash.json"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"accepted\": true, \"decision\": \"out-of-language\", \"reason\": null}\n"
+    },
+    "route": "unsupported-input",
+    "verdict": {
+      "accepted": true,
+      "decision": "out-of-language",
+      "reason": null
+    }
+  },
+  {
+    "certificate": {
+      "decision": "out-of-language",
+      "format": "iwb-cert-1",
+      "side": "right",
+      "witness": {
+        "code": "bad-end-tag",
+        "detail": "expected </name> with optional trailing ASCII whitespace",
+        "location": "index.html:1:201"
+      }
+    },
+    "expected": "out-of-language",
+    "expected_code": "bad-end-tag",
+    "input_sha256": {
+      "left": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      },
+      "right": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "307752c2cb0b8d710e676957ddcff0816c04d968da2afb36db6651bcb00994e5",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      }
+    },
+    "matched": true,
+    "name": "end-tag-attribute",
+    "observed": "out-of-language",
+    "proposal": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\certify.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\end-tag-attribute"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"decision\":\"out-of-language\",\"format\":\"iwb-cert-1\",\"side\":\"right\",\"witness\":{\"code\":\"bad-end-tag\",\"detail\":\"expected </name> with optional trailing ASCII whitespace\",\"location\":\"index.html:1:201\"}}\n"
+    },
+    "replay": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\check.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\end-tag-attribute",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\end-tag-attribute.json"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"accepted\": true, \"decision\": \"out-of-language\", \"reason\": null}\n"
+    },
+    "route": "unsupported-input",
+    "verdict": {
+      "accepted": true,
+      "decision": "out-of-language",
+      "reason": null
+    }
+  },
+  {
+    "certificate": {
+      "decision": "out-of-language",
+      "format": "iwb-cert-1",
+      "side": "right",
+      "witness": {
+        "code": "unsupported-property",
+        "detail": "gap",
+        "location": "style.css:rule0"
+      }
+    },
+    "expected": "out-of-language",
+    "expected_code": "unsupported-property",
+    "input_sha256": {
+      "left": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      },
+      "right": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "21ec5516b485cb2b23050fab483e6a25e45436f457ca7c1e72c6b84d8ff360e5"
+      }
+    },
+    "matched": true,
+    "name": "css-shorthand",
+    "observed": "out-of-language",
+    "proposal": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\certify.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\css-shorthand"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"decision\":\"out-of-language\",\"format\":\"iwb-cert-1\",\"side\":\"right\",\"witness\":{\"code\":\"unsupported-property\",\"detail\":\"gap\",\"location\":\"style.css:rule0\"}}\n"
+    },
+    "replay": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\check.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\css-shorthand",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\css-shorthand.json"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"accepted\": true, \"decision\": \"out-of-language\", \"reason\": null}\n"
+    },
+    "route": "unsupported-input",
+    "verdict": {
+      "accepted": true,
+      "decision": "out-of-language",
+      "reason": null
+    }
+  },
+  {
+    "certificate": {
+      "decision": "out-of-language",
+      "format": "iwb-cert-1",
+      "side": "right",
+      "witness": {
+        "code": "unsupported-selector",
+        "detail": "div*",
+        "location": "style.css:rule0"
+      }
+    },
+    "expected": "out-of-language",
+    "expected_code": "unsupported-selector",
+    "input_sha256": {
+      "left": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      },
+      "right": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "eb5e343983155a45e92cfaee283e75a96e52ebfb5fe071a44463d6b7f1225e40"
+      }
+    },
+    "matched": true,
+    "name": "css-adjacent-type-selector",
+    "observed": "out-of-language",
+    "proposal": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\certify.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\css-adjacent-type-selector"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"decision\":\"out-of-language\",\"format\":\"iwb-cert-1\",\"side\":\"right\",\"witness\":{\"code\":\"unsupported-selector\",\"detail\":\"div*\",\"location\":\"style.css:rule0\"}}\n"
+    },
+    "replay": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\check.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\css-adjacent-type-selector",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\css-adjacent-type-selector.json"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"accepted\": true, \"decision\": \"out-of-language\", \"reason\": null}\n"
+    },
+    "route": "unsupported-input",
+    "verdict": {
+      "accepted": true,
+      "decision": "out-of-language",
+      "reason": null
+    }
+  },
+  {
+    "certificate": null,
+    "expected": "environment-error",
+    "expected_code": null,
+    "input_sha256": {
+      "left": {
+        "bundle.json": "4cfe5a91bbfd535135670263720db71769c25902c8d9accd18d843273ea3b1e1",
+        "child.html": "9da604ecb8a0c374185f4dd17aa54c3f5dc1760464cff71e248853d7f4938ed6",
+        "index.html": "c0c0e2999dbd0d1b746c57bf6638049c85bae5491f0a1686be1c3307423d8e0a",
+        "style.css": "e462cf1e33ee78dd45a098fb4a4ecc0b0d3fd445d781b46ab4276af9f716d804"
+      },
+      "right": {}
+    },
+    "matched": true,
+    "name": "absent-endpoint",
+    "observed": "environment-error",
+    "proposal": {
+      "command": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "D:\\CodexProjects\\wg-check\\substantive-library\\P012\\artifact\\certify.py",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\base",
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\private\\substantive_library_completion\\P012\\current-publication-fixtures\\absent-endpoint"
+      ],
+      "returncode": 3,
+      "stderr": "environment-error: root-unavailable at .: FileNotFoundError\n",
+      "stdout": ""
+    },
+    "replay": null,
+    "route": "retry-environment",
+    "verdict": null
+  }
+]

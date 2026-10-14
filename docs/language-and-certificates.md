@@ -33,7 +33,9 @@ metadata are each compared to later observations from the same API. Cross-API
 comparisons retain device, inode, type, size, modification time and, on Windows
 when exposed, birth time: Windows `ctime` meanings may differ between path-stat
 and handle-stat results. Within-API `ctime` changes still abort the read. The
-root is an HTML file. Limits are 64 resources, 8 MiB total bytes, 2 MiB per text
+root is an HTML file under the same case-insensitive suffix classifier used for
+other resources; its path spelling remains exact. Limits are 64 resources,
+8 MiB total bytes, 2 MiB per text
 file, 10,000 HTML events, 4,000 CSS rules, and 8,000 declarations **summed over the whole
 bundle**, 80-character names,
 and 240-character paths.
@@ -55,6 +57,18 @@ Text files must be UTF-8 and start (apart from ignorable leading whitespace) wit
 one `<!doctype html>`. There is exactly one `html`, `head`, and `body`. The direct
 children of `html` are exactly `head` followed by `body`. Non-void elements must
 be explicitly closed and cannot use XML-style self-closing syntax.
+
+Opening-token admission checks the original start token before event extraction.
+With the same `name` and ASCII `W` as below, a token is `<name (W+ attribute)* W* >`
+or has a final `/>` for a void element. Each attribute has an allowlisted name,
+optional `W` around `=`, and a quoted value or a nonempty unquoted value. Unquoted
+values contain no ASCII `W`, quote, `=`, `<`, `>` or backtick. A slash inside an
+unquoted value remains data: `<br title=Notes/>` has the literal value `Notes/`,
+not `Notes`. Stray delimiter slashes, missing separators between attributes,
+empty unquoted values and incomplete opening tokens fail as `bad-start-tag`.
+Valid quoting choices, ASCII spacing and case folding still agree. Valueless,
+duplicate, forbidden and wrong-tag attributes retain their semantic exclusions.
+This restricted lexical gate is not full HTML conformance or browser validation.
 
 Closing-token admission validates the raw markup before the end-event callback:
 `end-tag = "</" name W* ">"`, where `name` matches
@@ -268,10 +282,9 @@ be read as a positive match.
 
 ## 7. Implementation lineage and evidence
 
-The incoming producer lines 5–937 and checker lines 6–938 are 933 corresponding
-identical lines (one additional trailing blank is excluded). The repaired parsing
-and canonicalization functions still have the same source; separate modules and
-no import of the producer are not implementation independence. The 512-case test
+The producer and checker share 35 structurally identical top-level parsing and
+canonicalization definitions. Checker-specific functions validate maps and
+replay records without importing the producer. The 512-case test
 compares canonical byte strings or exact structural rejection records. It is not
 an equality test over complete stable parser records. The tiny oracle reuses
 producer-parsed objects; its extra parse-shape check is limited to resource keys,

@@ -24,7 +24,11 @@ def document(body: str = "<p>Reading notes</p>") -> str:
 
 class HtmlLexicalAdmissionTests(unittest.TestCase):
     def setUp(self):
-        self.root = Path(tempfile.mkdtemp(prefix="iwb-lexical-"))
+        self.workspace = tempfile.TemporaryDirectory(prefix="iwb-lexical-")
+        self.addCleanup(self.workspace.cleanup)
+        self.root = Path(self.workspace.name).resolve()
+        if not self.root.is_relative_to(Path(tempfile.gettempdir()).resolve()):
+            raise RuntimeError("owned temporary directory containment")
         self.serial = 0
 
     def bundle(self, text: str, child: str | None = None) -> Path:

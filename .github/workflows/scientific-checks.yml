@@ -38,6 +38,12 @@ jobs:
             done
             exit 1
           fi
+          if ! timeout --signal=TERM --kill-after=5s 300s python3 -O -B reproduce.py --out ci-science-optimized > ci-logs/reproduce-optimized.log 2>&1; then
+            cat ci-logs/reproduce-optimized.log
+            exit 1
+          fi
+          python3 -B class_symmetry.py --out ci-class-symmetry > ci-logs/class-symmetry.log 2>&1
+          timeout --signal=TERM --kill-after=5s 120s python3 -B comparison_cost.py --out ci-comparison-costs > ci-logs/comparison-costs.log 2>&1
       - name: Preserve raw output and logs even on failure
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # official v4.6.2
@@ -45,6 +51,9 @@ jobs:
           name: owned-finite-science-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             ci-science/
+            ci-science-optimized/
+            ci-class-symmetry/
+            ci-comparison-costs/
             ci-logs/
           if-no-files-found: error
           retention-days: 7

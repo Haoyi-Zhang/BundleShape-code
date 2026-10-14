@@ -1,0 +1,229 @@
+{
+  "environment": {
+    "bytecode_disabled": true,
+    "executable": "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "platform": "Windows-11-10.0.28000-SP0",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "format": "iwb-owned-lexical-probe-1",
+  "probe_sha256": "042709438c92dd424d328368973dff1a6ae0f20c54cc2b9508e52be0d2dd62b7",
+  "records": [
+    {
+      "admitted": true,
+      "core": "src.producer_core",
+      "p_event": [
+        "p",
+        [
+          [
+            "title",
+            "Notes"
+          ],
+          [
+            "lang",
+            "en"
+          ]
+        ],
+        false
+      ],
+      "source": "<p title=\"Notes\" lang=\"en\">Notes</p>"
+    },
+    {
+      "admitted": true,
+      "core": "src.producer_core",
+      "p_event": [
+        "p",
+        [
+          [
+            "title",
+            "Notes"
+          ],
+          [
+            "lang",
+            "en"
+          ]
+        ],
+        false
+      ],
+      "source": "<p / title=\"Notes\" lang=\"en\">Notes</p>"
+    },
+    {
+      "admitted": true,
+      "core": "src.producer_core",
+      "p_event": [
+        "p",
+        [
+          [
+            "title",
+            "Notes"
+          ],
+          [
+            "lang",
+            "en"
+          ]
+        ],
+        false
+      ],
+      "source": "<p title=\"Notes\"lang=\"en\">Notes</p>"
+    },
+    {
+      "admitted": true,
+      "core": "src.producer_core",
+      "p_event": [
+        "p",
+        [
+          [
+            "title",
+            "Notes"
+          ],
+          [
+            "lang",
+            "en"
+          ]
+        ],
+        false
+      ],
+      "source": "<p title=Notes lang=en>Notes</p>"
+    },
+    {
+      "admitted": true,
+      "core": "src.producer_core",
+      "p_event": [
+        "p",
+        [
+          [
+            "title",
+            ""
+          ]
+        ],
+        false
+      ],
+      "source": "<p title=>Notes</p>"
+    },
+    {
+      "admitted": true,
+      "core": "src.producer_core",
+      "p_event": [
+        "p",
+        [
+          [
+            "title",
+            "Not`es"
+          ]
+        ],
+        false
+      ],
+      "source": "<p title=Not`es>Notes</p>"
+    },
+    {
+      "admitted": true,
+      "core": "src.checker_core",
+      "p_event": [
+        "p",
+        [
+          [
+            "title",
+            "Notes"
+          ],
+          [
+            "lang",
+            "en"
+          ]
+        ],
+        false
+      ],
+      "source": "<p title=\"Notes\" lang=\"en\">Notes</p>"
+    },
+    {
+      "admitted": true,
+      "core": "src.checker_core",
+      "p_event": [
+        "p",
+        [
+          [
+            "title",
+            "Notes"
+          ],
+          [
+            "lang",
+            "en"
+          ]
+        ],
+        false
+      ],
+      "source": "<p / title=\"Notes\" lang=\"en\">Notes</p>"
+    },
+    {
+      "admitted": true,
+      "core": "src.checker_core",
+      "p_event": [
+        "p",
+        [
+          [
+            "title",
+            "Notes"
+          ],
+          [
+            "lang",
+            "en"
+          ]
+        ],
+        false
+      ],
+      "source": "<p title=\"Notes\"lang=\"en\">Notes</p>"
+    },
+    {
+      "admitted": true,
+      "core": "src.checker_core",
+      "p_event": [
+        "p",
+        [
+          [
+            "title",
+            "Notes"
+          ],
+          [
+            "lang",
+            "en"
+          ]
+        ],
+        false
+      ],
+      "source": "<p title=Notes lang=en>Notes</p>"
+    },
+    {
+      "admitted": true,
+      "core": "src.checker_core",
+      "p_event": [
+        "p",
+        [
+          [
+            "title",
+            ""
+          ]
+        ],
+        false
+      ],
+      "source": "<p title=>Notes</p>"
+    },
+    {
+      "admitted": true,
+      "core": "src.checker_core",
+      "p_event": [
+        "p",
+        [
+          [
+            "title",
+            "Not`es"
+          ]
+        ],
+        false
+      ],
+      "source": "<p title=Not`es>Notes</p>"
+    }
+  ],
+  "source_sha256": {
+    "src/checker_core.py": "1e870c02e43e27b1dbfc562e05f1c9ce45f98a4ac8ffd5d6d120fe24dd2cada9",
+    "src/limits.py": "a66fe94731c8bcc6d8d025d552be35664f5969a7c57c818c3440ca95680df9d6",
+    "src/producer_core.py": "be53e9a3dc538772d4fabca194456b18c1cf197ca474782bee4770e9466a667d"
+  }
+}

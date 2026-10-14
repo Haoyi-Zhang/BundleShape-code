@@ -1,246 +1,163 @@
 # Certified structural equivalence for anchored inert web bundles
 
-This standalone artifact concerns a finite, static IWB language, not a browser
-model, phishing detector, provenance proof or arbitrary HTML/CSS equivalence.
-It reads owned benign local fixtures; no scripts, forms, browser, network, GPU,
-model API or external scientific service are executed.
+BundleShape compares a finite, static source language using one global
+resource, ID and class map. Canonical records preserve ordered HTML events,
+CSS rules, literals, typed local references and exact asset bytes. The declared
+quotient ignores specified local spelling and unordered-container differences.
+The operational contract is in `docs/language-and-certificates.md`;
+written correctness arguments are in `proofs/correctness.md`.
+The implementation performs no browser execution, form submission, external
+fetch or model call.
 
-## Claims and trusted base
+## Reproduction
 
-`proofs/correctness.md` gives written (not machine-checked) arguments for the
-declared admitted relation. Exact asset bytes are reversibly base64-encoded in
-canonical records; digests alone never decide equality. Positive certificates
-carry one total resource/ID/class correspondence. Negative certificates identify
-the first canonical UTF-8 byte difference or EOF, not a minimum explanation.
-Out-of-language certificates concern a deterministic structural exclusion only.
-
-**Common-origin disclosure:** incoming producer lines 5–937 and checker lines
-6–938 are 933 corresponding identical core lines. The repaired parsing and
-canonicalization cores remain same-source. Separate modules and no checker
-import of the producer do not mean independent implementation. The 512-case
-experiment compares canonical bytes or structural rejection records, not complete
-parser objects. The tiny oracle reuses producer-parsed objects; its additional
-shape comparison covers only resource keys, root and name orders.
-
-## Run the delivered commands
-
-Requirements: Linux/POSIX, Python 3.10+ and its standard library. From a fresh
-extraction (or invoke the script by absolute path from any directory):
+The full measured campaign requires Linux/POSIX, Python 3.10+ and the standard
+library. From a fresh extraction:
 
 ```sh
-python reproduce.py --out reproduced
+python -B reproduce.py --out reproduced
+python -O -B reproduce.py --out reproduced-optimized
 ```
 
-The driver pins one CPU where available, imposes a 512-MiB address-space cap and
-a 110-second CPU cap per process,
-executes one child at a time, and stops on error. Scientific evaluation itself
-uses one process and no child workers. No downloads are performed. Equivalent
-individual commands, from the repository root, are:
+Output directories must be fresh. The driver sets CPU affinity where available,
+a 512-MiB address-space limit and a 110-second per-process CPU limit. It runs one
+child at a time and records the actual command, log, exit code, timeout and wall
+time. Optimization is propagated to every scientific child; checks use explicit
+failure paths rather than removable assertions. Windows supports the unit,
+supplemental, public-interface and paired-cost commands, but the full driver
+requires POSIX limits and RSS telemetry and reports that requirement explicitly.
+
+The seven stages generate fixtures, run unit tests, evaluate finite cases,
+audit implementation syntax, exercise targeted acceptance, run supplemental
+regressions and compare results. The driver copies the actual unit receipt into
+the evaluation directory. Its ten-file comparator uses the explicit
+`evidence/start-token-workflow/unit-summary.json` reference for the
+current 108-method domain; the archived unit receipt is preserved. Five outputs
+are byte-exact. Five JSON outputs remove only the documented run-specific
+wall/CPU/RSS/swap fields, retain scientific fields and distinguish JSON types.
+
+Separate, reproducible controls are:
 
 ```sh
-python generate_fixtures.py --out generated-fixtures
-python test.py --out unit-run
-python evaluate.py --out evaluation-run --work campaign-work
-python static_assurance.py --out static-run
-python repair_acceptance.py --out repair-run
-python test.py --suite regressions --out supplemental-run
+python -B test.py --out unit-run
+python -B test.py --suite regressions --out supplemental-run
+python -O -B test.py --suite regressions --out supplemental-optimized
+python -B publication_workflow.py --work workflow-inputs --out workflow-results
+python -B class_symmetry.py --out symmetry-results
+python -B comparison_cost.py --out cost-results
 ```
 
-The reproduction driver uses separate stage directories, copies the actual unit
-receipt into its evaluation directory without modification, and saves each raw
-child log, command, exit code, timeout flag and elapsed time. Generators and result
-drivers refuse nonempty output directories; they do not delete prior fixtures.
-To compare individual stages, place the actual `unit-summary.json` beside the
-evaluation outputs, then run `verify_results.py` against that directory and
-`results/`, with
-`--expected-unit evidence/parser-streaming/unit-summary.json`
-for the current 97-method test domain. The comparator checks **ten named result files** and
-reports `compared: 10`, `matched: true`, and no mismatches on success, explicitly
-recording that unit-receipt override. Without it, the archived 84-test count
-correctly differs from the current 97-test run; that archived result is unchanged.
-Five files are byte-exact. Five JSON comparisons remove only documented
-wall/CPU/RSS/swap telemetry fields; all scientific fields, worker counts,
-decisions, counts and lengths remain exact. New measurements must be finite,
-non-negative and within the stated RSS/swap guard. This is not bit-identical
-performance reproduction. The additional static result is checked separately.
+The abstract symmetry enumeration and paired-cost comparison are distinct
+experiments; neither enlarges the frozen metamorphic or tiny-orbit domains.
 
-`evidence/current-unit-summary.json` is the actual 87-test Windows receipt,
-not an edit to the retained 84-test result. `evidence/supplemental-unit-summary.json`
-records the six supplemental methods; `evidence/windows-stress.json` holds real
-five-repeat Windows timing with no RSS/swap substitution. The seven-file finite
-comparison is in `evidence/finite-checks.json`. These observations do not establish
-full Linux reproduction. The standalone-root `.github/workflows/scientific-checks.yml`
-prepares bounded offline science on pushes to `main` or manual dispatch, using
-runner-provided Python and always uploading raw logs/output, including failures.
+## Comparison outcomes and trust
 
-## Certificate CLI
+Positive certificates carry total resource, ID and class correspondences.
+The receiver validates domain, range, bijection, root, kinds and every typed
+occurrence before accepting. Negative certificates contain the first exact
+canonical UTF-8 byte difference or EOF, backed by reconstruction of both full
+objects. An admission witness reproduces a structural exclusion for a specified
+endpoint. Environmental failures produce no certificate. A rejected witness is
+not an opposite verdict.
 
-Positive replay constructs the three target identity dictionaries once per
-invocation, after exact total-bijection and root validation, and reuses them
-read-only for HTML/CSS resources. Endpoint bindings, sorted mismatch order and
-checker isolation from the producer are unchanged; no speed measurement is
-claimed. `python -B -m unittest discover -s regressions -v` includes six
-target-identity methods and five observed-metric methods alongside the six
-retained supplemental methods. CI
-runs this discovery explicitly as well as through the existing reproduction
-driver. The new oracle enumerates global maps over its own finite typed fixture
-specification, not production-parsed records; it is not an independent general
-HTML/CSS parser. The archived six-method receipt and 87-test receipt remain
-unchanged and do not describe the seventeen-method supplemental suite.
-`evidence/observed-metrics-regressions.json` records the actual Windows run of
-all seventeen methods with no failures, errors or skips. Its five metric tests
-exercise failed classifications and rejected certificates. Baseline accuracy
-uses the same 408 admitted pairs as the proposed method; out-of-language pairs
-belong to the separate 480-pair three-way conformance measure. Rejected
-certificates on admitted pairs are abstentions, not correct negative decisions.
-The stored aggregates are recomputed from the unchanged raw decision rows;
-the recorded campaign timings are not replaced by these regression timings.
+The producer and checker share 35 structurally identical top-level parsing and
+canonicalization definitions. Checker-specific code validates maps and replays
+records without importing the producer. This packaging isolates imports, not
+parser development. The tiny direct oracle uses separate relation-matching code
+on producer-parsed records. Ordinary same-information comparison also shares
+checker parsing/canonicalization.
 
-Choose a fresh output name; existing outputs are deliberately not overwritten.
+The filesystem contract assumes quiescent supplied directories. Limits, regular
+file inventory, reference resolution and metadata checks are enforced, but they
+do not implement immutable snapshots or hostile-upload service isolation.
+Protocol tags, exact input bytes, endpoint digests and source bindings are
+functional verification inputs, not decorative publication labels.
 
-```sh
-python certify.py fixtures/owned/fixture-00 fixtures/variants/fixture-00/combined-all --output equivalent.json
-python check.py fixtures/owned/fixture-00 fixtures/variants/fixture-00/combined-all equivalent.json
-python certify.py fixtures/owned/fixture-00 fixtures/variants/fixture-00/changed-text --output different.json
-python check.py fixtures/owned/fixture-00 fixtures/variants/fixture-00/changed-text different.json
-python canonicalize.py fixtures/owned/fixture-00
-```
+## Current evidence
 
-The CLI calls the checker **before** opening certificate output, bounds compact
-ASCII JSON to 4 MiB, and uses exclusive creation. Library `make_certificate`
-only proposes a certificate. Checker rejection is not the opposite verdict.
-Permission/I/O/transient read failures produce environmental non-acceptance,
-not an accepted out-of-language claim. CLI environmental status is exit 3.
-A successfully observed missing listed resource is instead a structural error.
+| Experiment | Actual domain and result |
+| --- | --- |
+| Frozen metamorphic cases | 480 pairs: 288 equivalent, 120 different, 72 excluded; all replay |
+| Operator combinations | 512 pairs; all decisions and canonical/rejection observations agree |
+| Tiny exact relation | 96 bundles, 5,120 pairs, 18,176 candidate maps; zero disagreement |
+| Altered witnesses | 72 bases, five alterations each; all 360 rejected |
+| Public unit suite | 108 methods pass, no failure/error/skip |
+| Supplemental suite | 22 methods pass normally and under optimization |
+| Public-interface example | 11 owned controls; two equivalent, two different, six exclusions, one environmental failure |
+| Unanchored abstract encoding | 76 graphs, 5,776 pairs, 580 equivalents, zero disagreement |
+| Same-information cost | 408 admitted pairs, three repetitions, zero decision disagreement |
 
-## Precisely normalized boundaries
+Source-bound Windows Python 3.12.14 receipts are in
+`evidence/start-token-workflow/`. They contain raw commands, method names,
+stdout/stderr, source identities and the unedited current unit and regression
+summaries. The root-kind controls cover uppercase/mixed-case HTML entry names
+and retain rejection of a CSS root. Static-gate controls use inert owned source
+fixtures; scientific comparisons distinguish integers from Boolean substitutes.
 
-The relation compares parsed records: HTML character references are decoded in
-text and attribute values; HTML tag/attribute names and CSS type-selector/property
-names are lowercased. Local URL spellings resolve to typed target occurrences,
-and canonical CSS replaces the whole URL atom, including quotes and URL syntax,
-by `url(@rK)`. Literal record fields are exact after this source-to-record
-quotient, which does not establish browser equivalence.
+The publication example contains owned reading-note pages and restricted CSS.
+Ten issued certificates replay; the missing endpoint emits none.
+Ordinary document-local ID reuse and a simultaneously new class set are
+excluded by the declared bundle-global ID and class-anchor rules. This is an
+outcome-routing example, not natural-site applicability or browser validation.
 
-HTML comments do not split data runs: concatenate callbacks until a structural
-event, normalize newline/NFC, then remove a wholly blank run. Thus `ab` and
-`a<!--c-->b` agree, but `a<!--c--> b` retains its internal space. Real tags
-separate runs; quoted attribute content remains literal; malformed comments fail.
-Insertion inside markup or character references is not promised invariant.
+`results/same-information-costs/` records full filesystem admission,
+proposal, certificate wire JSON encoding/decoding, replay and answer encoding
+as applicable. Input generation and process startup are excluded from both
+warm same-process methods. The median certificate/direct wall ratio is 2.064;
+the certificate method is slower on 1,223 of 1,224 paired measurements.
+Direct and certificate medians are 8.614 and 17.710 ms. The ordinary method has
+the same exact Boolean target and no correspondence-certificate product.
+These results establish additional evidence cost, not speed or detection gain.
 
-Raw closing tokens are checked before the name-only end-event callback. The form
-is `</name>` with optional trailing ASCII space/tab/LF/CR/form feed; names are
-case-folded. Tail attributes, extra slashes and incomplete closures are rejected,
-not erased into equivalent records. Multi-class elements remain admitted when
-their ordered introductions add at most one unseen class. IDs remain unique
-across the whole bundle, and fragments remain tied to their owning document.
+`class_symmetry.py` concerns the abstract size-parameterized language without
+A3, not a relaxation of production admission. Its graph and class-map oracles
+enumerate zero through four original vertices and at most five encoded classes.
+The written GI reduction uses established colored directed isomorphism and
+rooted ordering mechanisms from Schmidt-Schauß, Rau and Sabel (RTA2013,
+DOI 10.4230/LIPIcs.RTA.2013.255); it is not a new general GI algorithm or
+unconditional exponential-time lower bound.
 
-CSS uses zero-width **prelexical** comment erasure outside strings.
-`body/**c**/.x` equals `body.x`; `body /*c*/.x` retains a descendant separator.
-This convention can join lexemes, and is not CSS-standard token preservation or
-browser equivalence. `gap` is excluded as a shorthand (W3C CSS Box Alignment
-Level 3 §8.2); `row-gap` and `column-gap` remain eligible longhands.
+## Language and measured scope
 
-Manifest strings are validated before path normalization; `./`, internal `/./`,
-duplicate slashes and trailing slashes are rejected. Safe local URL dot segments
-are a separate, explicitly normalized case. Directory traversal is sorted-name
-DFS and resource admission uses sorted relative paths, not creation order.
-HTML events (10,000), CSS rules (4,000) and declarations (8,000) are **whole-bundle**
-caps, with early per-file checks. CSS counts are incremental. The `O(S log S)`
-claim concerns only post-admission canonicalization/replay under its atom and
-symbol-table cost assumptions; it does not bound parsing or environmental work.
+Root and other resources use the same case-insensitive suffix classifier while
+retaining path spellings. Raw start/end tokens are validated before tolerant
+library callbacks discard spelling. Valid attribute separators, quoted or
+nonempty unquoted values, literal slashes and ASCII closing whitespace retain
+their records. Multi-class elements reuse known names and introduce at most one
+new class at a position. IDs are unique across the entire bundle.
 
-The negative witness stores byte offset, byte-or-null values and two lengths.
-For `d=digits(max(1,m,n))`, its conservative wire bound is `400+3d < 512` under
-fixed input limits. Full exact asset base64 remains in reconstructed canonical
-objects. Regressions cover all ordered pairs of U+0085/U+2028/U+2029, strict
-prefixes, and two unequal 2-MiB assets without an oversized certificate.
+HTML comment callbacks coalesce maximal text runs; an internal space is kept.
+CSS removes comments before its restricted lexer, outside quoted strings,
+with zero width. This declared convention can join lexemes and differs from
+standard CSS token preservation. Shorthands such as gap, active content and
+unsupported selectors remain excluded. Exact asset bytes are reversible in
+canonical records; a digest alone does not establish equality.
 
-## Evidence and correct experimental units
+The retained stress pair contains 17 HTML files, 19 total resources, 1,200 IDs,
+1,201 classes, 1,200 rules and 3,601 declarations. Both inputs total 322,897 bytes;
+each canonical object has 305,053 bytes and its positive certificate has 49,432
+bytes. Original environment-specific stress measurements and admission-cost
+observations are preserved with their actual records. They are not relabeled
+as current Linux measurements, throughput or natural-corpus effectiveness.
 
-* 480 owned base/variant pairs: 288 equivalent, 120 different, 72 out of language;
-  all expected decisions and replay checks pass.
-* 512 seeded combinations: 256 equivalent, 160 different, 96 out of language;
-  all decisions/replays and same-source canonical/rejection comparisons agree.
-* 96 tiny bundles, 5,120 ordered pairs, 18,176 explicit candidate bijections;
-  zero canonicalizer/oracle disagreements.
-* **72 base certificate instances**: 24 in each of three decision classes,
-  **five mutations per instance**, hence 120 attempts per class and **360 total**;
-  zero corrupted certificates accepted. This is not 360 independent originals.
-* The retained receipt records **84 unit/boundary tests**, comprising 47 inherited
-  tests and 37 targeted regressions/read-only count checks. An earlier source domain had
-  **87 methods**, including three additional URI-component tests, and a separate
-  **six-method retained supplemental suite**. The cited Windows receipts pass
-  both without skips; the additional six target-identity methods described above
-  are outside those historical receipts.
-* Stress construction: **16 content HTML pages plus one root HTML = 17 HTML**,
-  one CSS and one asset = **19 resources**. It has 1,200 IDs, 1,201 classes,
-  1,200 rules and 3,601 declarations. The retained Linux median wall is
-  0.335828 s, process peak RSS 119,324 KiB. The fresh Windows median is
-  0.367159 s; RSS was not measured there. Neither is a scaling curve.
+All executed scientific fixtures are owned benign local inputs. The motivating
+website-generation study is cited as context; no functional phishing-source
+dataset is shipped, executed, transformed or redistributed. Its retained
+metadata/index observations are not an admission denominator or detection
+experiment. Natural-source applicability, independent parser validation and
+downstream engineering benefit require separate evidence.
 
-The corrected `stress` fields distinguish `content_pages`, `root_html_pages`,
-`html_resources` and `resources`. The former `pages:16` meant content pages only.
-`combination-summary.json` uses
-`producer_checker_canonical_or_rejection_agreements`, not a parser-independence
-label. `evidence/retained-results/` holds the exact ten incoming observations,
-including their original timings and old field labels, unchanged. Field-level
-changes from those observations are recorded in `evidence/result-reconciliation.json`.
-The pre-existing `results/` measurements are retained unchanged by this review;
-the new Windows and finite recheck receipts are separately named in `evidence/`.
-The retained campaign's `certificate_bytes` field counts compact sorted-key ASCII
-JSON **without** a trailing newline. CLI wire-size receipts and the negative
-certificate size bound include that newline; the two measures differ by one byte
-for the same certificate. Asset sizes and canonical bytes are exact byte counts.
+## Materials and attribution
 
-## Closing-token checks and supplied-fixture cost
+`src/` holds implementation, `tests/` and `regressions/` hold executable
+checks, `docs/` specifies contracts, `proofs/` contains written arguments,
+and `results/`/`evidence/` preserve actual scientific observations.
+`claim_evidence_ledger.csv` maps statements to their consumers and records.
+The reference audit distinguishes metadata/passage/full-text reading scopes.
+Historical scientific data are preserved, without extra deliverable manuscripts.
 
-`tests/test_html_lexical_admission.py` contains ten lexical/name-scope methods,
-including complete tags and comments delivered one character at a time.
-EOF processing consumes buffered feed fragments before checking for incomplete
-markup. On Windows Python 3.12.14 the full suites pass **97 unit/boundary
-methods and 17 supplemental methods**. The measured unit receipt is
-`evidence/parser-streaming/unit-summary.json`; the supplemental domain is unchanged.
-Seven finite outputs match retained observations in that directory's
-`finite/comparison.json`; Linux stress telemetry and the ten-file driver were
-not rerun on Windows. Historical 84/87-method and six-method receipts are not
-replaced. The reproduction driver uses the measured 97-method expected receipt.
-
-For the bounded admission-cost comparison:
-
-```sh
-python -B admission_cost.py --output admission-cost.json
-```
-
-The 24 **generated** supplied bases contain 48 HTML files, 96 resources and
-37,044 bytes including manifests. Five repeats alternate strict and
-standard-library closing-token methods, running full `parse_bundle` admission
-and canonical construction in both cores. All 24 bases are admitted by each
-core; 480 canonical objects agree. The receipt
-`evidence/lexical-admission-20261012/owned-admission-cost-cli.json` records
-aggregate wall medians of 0.205/0.206 seconds on Windows Python 3.12.14.
-Only the closing-token method differs; this is not an old-full-parser
-comparison, speedup claim, natural admission rate or detector benchmark.
-
-## Unavailable natural-source study
-
-**No natural-source experiment is delivered or claimed.** The supplied project,
-standalone archive and FAC-labelled archive do not contain
-`natural_source_study.py`, a usable public source selection, source bytes or
-matching experiment results. The only putative selection was a 20-byte header.
-It is retained as `evidence/unavailable-study-selection.csv`, with its absence
-record. It cannot support the earlier narrative of 24 public roots, parser
-agreement or a natural-corpus result. No script or data was reconstructed from
-that narrative, and no README command calls a missing program.
-
-The inherited `results/anchor-static-inventory.json` contains only motivating
-repository metadata/index observations, not source admission or detection results.
-No live repository URL for this artifact is fabricated.
-
-## Files and disclosure
-
-`src/` contains the implementation, `tests/` the tests, `docs/` the operational
-contract, `proofs/` written arguments, `results/` retained outputs, `evidence/`
-original observations and repair checks. `claim_evidence_ledger.csv` maps claims
-to actual code/results. `baseline_trace/` retains the earlier narrow trace
-counterexample as background, not as full web evidence.
+Original code is distributed under the retained MIT license and copyright.
+OpenAI Codex assisted with manuscript drafting/revision, implementation changes,
+regression code, source-bound measurements and artifact checks. The resulting
+text, code and scientific records remain subject to the stated verification
+and research evidence, not a claim of human sign-off.
