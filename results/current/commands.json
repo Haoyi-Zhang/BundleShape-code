@@ -1,0 +1,94 @@
+[
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/runner/work/BundleShape/BundleShape/generate_fixtures.py",
+      "--out",
+      "/home/runner/work/BundleShape/BundleShape/ci-science/generated-fixtures"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.2151526739999987
+  },
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/runner/work/BundleShape/BundleShape/test.py",
+      "--out",
+      "/home/runner/work/BundleShape/BundleShape/ci-science/unit"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 2.0708608319999975
+  },
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/runner/work/BundleShape/BundleShape/evaluate.py",
+      "--out",
+      "/home/runner/work/BundleShape/BundleShape/ci-science/evaluation",
+      "--work",
+      "/home/runner/work/BundleShape/BundleShape/ci-science/campaign"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 17.807771989
+  },
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/runner/work/BundleShape/BundleShape/static_assurance.py",
+      "--out",
+      "/home/runner/work/BundleShape/BundleShape/ci-science/static"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.11415937400000331
+  },
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/runner/work/BundleShape/BundleShape/repair_acceptance.py",
+      "--out",
+      "/home/runner/work/BundleShape/BundleShape/ci-science/repairs"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.6666816609999984
+  },
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/runner/work/BundleShape/BundleShape/test.py",
+      "--suite",
+      "regressions",
+      "--out",
+      "/home/runner/work/BundleShape/BundleShape/ci-science/supplemental"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.11415242500000033
+  },
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/runner/work/BundleShape/BundleShape/verify_results.py",
+      "--actual",
+      "/home/runner/work/BundleShape/BundleShape/ci-science/evaluation",
+      "--expected",
+      "/home/runner/work/BundleShape/BundleShape/results",
+      "--expected-unit",
+      "/home/runner/work/BundleShape/BundleShape/evidence/current-unit-summary.json"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.03185487000000364
+  }
+]

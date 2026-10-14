@@ -1,0 +1,10 @@
+{
+  "byte_inventory_equal": false,
+  "checker_accepted": true,
+  "description": "resource-local alpha normalization loses the cross-resource class coupling",
+  "expected": "different",
+  "lexical_equal": false,
+  "local_alpha_equal": true,
+  "producer_decision": "different",
+  "syntax_no_alpha_equal": false
+}
