@@ -157,7 +157,5 @@ The reference audit distinguishes metadata/passage/full-text reading scopes.
 Historical scientific data are preserved, without extra deliverable manuscripts.
 
 Original code is distributed under the retained MIT license and copyright.
-OpenAI Codex assisted with manuscript drafting/revision, implementation changes,
-regression code, source-bound measurements and artifact checks. The resulting
-text, code and scientific records remain subject to the stated verification
+Text, code and scientific records remain subject to the stated verification
 and research evidence, not a claim of human sign-off.
